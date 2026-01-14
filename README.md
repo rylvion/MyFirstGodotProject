@@ -69,7 +69,7 @@ and of course [freeCodeCamp](https://freecodecamp.org) for the actual tutorial
 
 ## Playable Demo
 
-Try the game here: https://yourusername.github.io/MyFirstGodotProject
+Try the game here: https://rylvion.github.io/MyFirstGodotProject
 
 ## Downloads
 
