@@ -18,7 +18,7 @@ RARITY: Common
 - GOLD: 5
 
 #### Frog
-A sly amphibian that leaps faster than it looks. Tougher than the slime, it guards its gold fiercely.
+A sly amphibian that leaps faster than it looks. Tougher than the slime
 
 RARITY: Common
 ##### **Stats:**
@@ -42,6 +42,7 @@ basically the foundation of the godot engine
 
 ## what i added: _(that the video did not include)_
 - advanced death handling
+- advanced animated background
 - added 1 extra mob (slime)
 - added ladder detection
 - Levelling system with an exponentional growth:
@@ -52,7 +53,6 @@ basically the foundation of the godot engine
 
 ## Future 
 next time in ~~dragon ball z~~ _(wait wrong anime)_:
-_(okay lets try this one time)_, In the next chapters of this adventure, I plan to:
 - add music _(so it stops being silent despair)_
 - making enemy scripts more modular
 - add more mobs _(frogs and slimes are lonely [you wont guess what they've been doing at 3 am])_
