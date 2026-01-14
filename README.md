@@ -66,3 +66,11 @@ next time in ~~dragon ball z~~ _(wait wrong anime)_:
 ## Credits
 huge thanks too [@ansimuz](https://itch.io/profile/ansimuz) for the [Sunny land pixel assets](https://ansimuz.itch.io/sunny-land-pixel-game-art)
 and of course [freeCodeCamp](https://freecodecamp.org) for the actual tutorial
+
+## Playable Demo
+
+Try the game here: https://yourusername.github.io/MyFirstGodotProject
+
+## Downloads
+
+Windows build: https://github.com/rylvion/MyFirstGodotProject/releases/download/v1.0/TinyQuest-Windows.zip
