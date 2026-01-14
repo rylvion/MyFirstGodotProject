@@ -1,0 +1,75 @@
+[gd_scene load_steps=15 format=3 uid="uid://cy212gdu3voy3"]
+
+[ext_resource type="Script" uid="uid://h5fontqa1mby" path="res://scripts/cherry.gd" id="1_g2gxv"]
+[ext_resource type="Texture2D" uid="uid://d3acuv5hh5jjh" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/item-feedback/item-feedback-1.png" id="1_pwd5r"]
+[ext_resource type="Texture2D" uid="uid://cr4j1gmqe83sy" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/item-feedback/item-feedback-2.png" id="2_g2gxv"]
+[ext_resource type="Texture2D" uid="uid://bv6wv0u1hmv0o" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/item-feedback/item-feedback-3.png" id="3_aqv0p"]
+[ext_resource type="Texture2D" uid="uid://7813catiatp5" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/item-feedback/item-feedback-4.png" id="4_wl07h"]
+[ext_resource type="Texture2D" uid="uid://j5ryvbjiyob5" path="res://assets/Props Items and VFX/Sunnyland items/Sprites/cherry/cherry-1.png" id="5_d3tns"]
+[ext_resource type="Texture2D" uid="uid://77o83blhe0iy" path="res://assets/Props Items and VFX/Sunnyland items/Sprites/cherry/cherry-2.png" id="6_3spvl"]
+[ext_resource type="Texture2D" uid="uid://o6p80q6u41vo" path="res://assets/Props Items and VFX/Sunnyland items/Sprites/cherry/cherry-3.png" id="7_gx8s0"]
+[ext_resource type="Texture2D" uid="uid://byep387g1w7a3" path="res://assets/Props Items and VFX/Sunnyland items/Sprites/cherry/cherry-4.png" id="8_ajklt"]
+[ext_resource type="Texture2D" uid="uid://24k4k4qk5apv" path="res://assets/Props Items and VFX/Sunnyland items/Sprites/cherry/cherry-5.png" id="9_d30st"]
+[ext_resource type="Texture2D" uid="uid://l43eb2kec325" path="res://assets/Props Items and VFX/Sunnyland items/Sprites/cherry/cherry-6.png" id="10_62xs3"]
+[ext_resource type="Texture2D" uid="uid://dxuvc2mqwb8r5" path="res://assets/Props Items and VFX/Sunnyland items/Sprites/cherry/cherry-7.png" id="11_0smvb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pt84m"]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5s52j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pwd5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g2gxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aqv0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wl07h")
+}],
+"loop": false,
+"name": &"feedback",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d3tns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3spvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gx8s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ajklt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d30st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_62xs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0smvb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="cherry" type="Area2D"]
+script = ExtResource("1_g2gxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pt84m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5s52j")
+animation = &"feedback"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,157 @@
+[gd_scene load_steps=28 format=3 uid="uid://bfqjqvrw8kqe1"]
+
+[ext_resource type="Script" uid="uid://dfcnj1bh4qbhn" path="res://scripts/enemies/slime.gd" id="1_o2fkb"]
+[ext_resource type="Texture2D" uid="uid://brr6l2irrk5dl" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer1.png" id="1_uekmf"]
+[ext_resource type="Texture2D" uid="uid://cxbsyneq80mog" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer2.png" id="2_o2fkb"]
+[ext_resource type="Texture2D" uid="uid://d3yiwbcwewt24" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer3.png" id="3_itray"]
+[ext_resource type="Texture2D" uid="uid://swc75wmy0ndx" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer4.png" id="4_0cb1b"]
+[ext_resource type="Texture2D" uid="uid://drrmhp0w8d1sy" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer5.png" id="5_d8dsn"]
+[ext_resource type="Texture2D" uid="uid://cf514f5u57eib" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer6.png" id="6_c82uy"]
+[ext_resource type="Texture2D" uid="uid://vpkd341tq1sd" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer7.png" id="7_agt0o"]
+[ext_resource type="Texture2D" uid="uid://bukockwnypvbr" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/enemy-death/enemy-death-1.png" id="9_uekmf"]
+[ext_resource type="Texture2D" uid="uid://2clt5rtyu4u4" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/enemy-death/enemy-death-2.png" id="10_o2fkb"]
+[ext_resource type="Texture2D" uid="uid://v0m1fpvq7gri" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/enemy-death/enemy-death-3.png" id="11_itray"]
+[ext_resource type="Texture2D" uid="uid://c77cxmd33w8h3" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/enemy-death/enemy-death-4.png" id="12_0cb1b"]
+[ext_resource type="Texture2D" uid="uid://dukwx8kenlygb" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/enemy-death/enemy-death-5.png" id="13_d8dsn"]
+[ext_resource type="Texture2D" uid="uid://hbd54drpe10x" path="res://assets/Props Items and VFX/Sunnyland FX/Sprites/enemy-death/enemy-death-6.png" id="14_c82uy"]
+[ext_resource type="Texture2D" uid="uid://rowo5d8v1vbf" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle1.png" id="15_u4oce"]
+[ext_resource type="Texture2D" uid="uid://c7c1kjo4oinu1" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle2.png" id="16_h24r4"]
+[ext_resource type="Texture2D" uid="uid://dqamgksdokmt8" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle3.png" id="17_wxxdl"]
+[ext_resource type="Texture2D" uid="uid://cn40vhkdhbntf" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle4.png" id="18_mrpi2"]
+[ext_resource type="Texture2D" uid="uid://3r8wcaywt1ay" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle5.png" id="19_rklar"]
+[ext_resource type="Texture2D" uid="uid://cf2nem0nkf634" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle6.png" id="20_dcak7"]
+[ext_resource type="Texture2D" uid="uid://bbxie8dy2g05o" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle7.png" id="21_56k1c"]
+[ext_resource type="Texture2D" uid="uid://btyhwethrkh3c" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle8.png" id="22_tqfft"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5itsj"]
+radius = 16.0
+height = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kimpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uekmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o2fkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_itray")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0cb1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d8dsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c82uy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_agt0o")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_uekmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o2fkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_itray")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0cb1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d8dsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c82uy")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_u4oce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_h24r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wxxdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mrpi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rklar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dcak7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_56k1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tqfft")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itray"]
+radius = 104.307236
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2fkb"]
+size = Vector2(27.371906, 21.381557)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itray"]
+size = Vector2(33.5, 21)
+
+[node name="Slime" type="CharacterBody2D"]
+script = ExtResource("1_o2fkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.86104524, 0.8800005)
+shape = SubResource("CapsuleShape2D_5itsj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_kimpj")
+animation = &"idle"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_itray")
+debug_color = Color(1, 0, 0, 0.050980393)
+
+[node name="PlayerDeath" type="Area2D" parent="."]
+scale = Vector2(0.76721036, 0.7600008)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
+position = Vector2(0.6517104, -9.210516)
+scale = Vector2(0.9999996, 1)
+shape = SubResource("RectangleShape2D_o2fkb")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(0.75, 2)
+shape = SubResource("RectangleShape2D_itray")
+debug_color = Color(0.81410164, 0.38590688, 0.00066478195, 0.41960785)
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]

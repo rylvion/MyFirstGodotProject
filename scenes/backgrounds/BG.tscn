@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://drpff6640u0oa"]
+
+[ext_resource type="Script" uid="uid://ba12cvm1nieo2" path="res://scripts/bg.gd" id="1_7r6q2"]
+[ext_resource type="Texture2D" uid="uid://ctkdfwnd5uc7l" path="res://assets/Environments/SunnyLand/Layers/back.png" id="1_275co"]
+[ext_resource type="Texture2D" uid="uid://yevcbi16p33d" path="res://assets/Environments/SunnyLand/Layers/middle.png" id="2_vcwcu"]
+[ext_resource type="Texture2D" uid="uid://cilnsmqb05cyt" path="res://assets/Environments/SunnyLand/Props/big-house.png" id="4_a1ds0"]
+[ext_resource type="Texture2D" uid="uid://dpybb7ngn314n" path="res://assets/Environments/SunnyLand/Props/house.png" id="5_1yvor"]
+
+[node name="BG" type="Parallax2D"]
+script = ExtResource("1_7r6q2")
+
+[node name="Sky" type="Parallax2D" parent="."]
+repeat_size = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="Sky"]
+position = Vector2(582, 324.99997)
+scale = Vector2(3.0104167, 2.6916668)
+texture = ExtResource("1_275co")
+
+[node name="Mountains" type="Parallax2D" parent="."]
+z_index = 1
+repeat_size = Vector2(1172, 0)
+
+[node name="Middle" type="Sprite2D" parent="Mountains"]
+position = Vector2(84, 484)
+scale = Vector2(0.95454544, 0.9347826)
+texture = ExtResource("2_vcwcu")
+
+[node name="Middle2" type="Sprite2D" parent="Mountains"]
+position = Vector2(251.99997, 484)
+scale = Vector2(0.95454544, 0.9347826)
+texture = ExtResource("2_vcwcu")
+
+[node name="Middle3" type="Sprite2D" parent="Mountains"]
+position = Vector2(420, 484)
+scale = Vector2(0.95454544, 0.9347826)
+texture = ExtResource("2_vcwcu")
+
+[node name="Middle4" type="Sprite2D" parent="Mountains"]
+position = Vector2(587.99994, 484)
+scale = Vector2(0.95454544, 0.9347826)
+texture = ExtResource("2_vcwcu")
+
+[node name="Middle5" type="Sprite2D" parent="Mountains"]
+position = Vector2(756, 484)
+scale = Vector2(0.95454544, 0.9347826)
+texture = ExtResource("2_vcwcu")
+
+[node name="Middle6" type="Sprite2D" parent="Mountains"]
+position = Vector2(923.9999, 484)
+scale = Vector2(0.95454544, 0.9347826)
+texture = ExtResource("2_vcwcu")
+
+[node name="Middle7" type="Sprite2D" parent="Mountains"]
+position = Vector2(1088, 484)
+scale = Vector2(0.95454544, 0.9347826)
+texture = ExtResource("2_vcwcu")
+
+[node name="Houses" type="Parallax2D" parent="."]
+repeat_size = Vector2(1172, 0)
+
+[node name="BigHouse" type="Sprite2D" parent="Houses"]
+position = Vector2(112, 376)
+texture = ExtResource("4_a1ds0")
+
+[node name="BigHouse2" type="Sprite2D" parent="Houses"]
+position = Vector2(384, 368)
+texture = ExtResource("4_a1ds0")
+
+[node name="BigHouse3" type="Sprite2D" parent="Houses"]
+position = Vector2(1088, 344)
+texture = ExtResource("4_a1ds0")
+
+[node name="BigHouse6" type="Sprite2D" parent="Houses"]
+position = Vector2(736, 384)
+texture = ExtResource("4_a1ds0")
+
+[node name="House" type="Sprite2D" parent="Houses"]
+position = Vector2(915.5, 342)
+texture = ExtResource("5_1yvor")
+
+[node name="House2" type="Sprite2D" parent="Houses"]
+position = Vector2(568, 360)
+texture = ExtResource("5_1yvor")

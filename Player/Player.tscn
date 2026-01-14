@@ -1,0 +1,272 @@
+[gd_scene load_steps=45 format=3 uid="uid://cv0itlc7l3gjj"]
+
+[ext_resource type="Script" uid="uid://do3bx5vsb8fwg" path="res://Player/player.gd" id="1_4n5ed"]
+[ext_resource type="Texture2D" uid="uid://t6h27aqyqt87" path="res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-1.png" id="2_yf47d"]
+[ext_resource type="Texture2D" uid="uid://curttx7kmg4nm" path="res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-2.png" id="3_jvfa1"]
+[ext_resource type="Texture2D" uid="uid://cu4gl8xqkx36n" path="res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-3.png" id="4_ib3vm"]
+[ext_resource type="Texture2D" uid="uid://cc7iu1a2sm5t" path="res://assets/Characters/Players/Foxy/Sprites/crouch/player-crouch-1.png" id="5_vtj8b"]
+[ext_resource type="Texture2D" uid="uid://c0b71icwfb1xp" path="res://assets/Characters/Players/Foxy/Sprites/crouch/player-crouch-2.png" id="6_rqaa0"]
+[ext_resource type="Texture2D" uid="uid://dknm5g0kkkp37" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-1.png" id="7_7w4lt"]
+[ext_resource type="Texture2D" uid="uid://ch2whnu5jq6yc" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy1.png" id="7_o1b5h"]
+[ext_resource type="Texture2D" uid="uid://c54fkr5xq7boe" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy2.png" id="8_7w4lt"]
+[ext_resource type="Texture2D" uid="uid://cqlbidelxu7pr" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-2.png" id="8_ww5s2"]
+[ext_resource type="Texture2D" uid="uid://cayac2amjwamt" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy3.png" id="9_ww5s2"]
+[ext_resource type="Texture2D" uid="uid://b8vk4ieh6jscq" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-3.png" id="9_xw4su"]
+[ext_resource type="Texture2D" uid="uid://bq3qmjw4m8apd" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-4.png" id="10_x2ho1"]
+[ext_resource type="Texture2D" uid="uid://dnn1jbqlva1ru" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy4.png" id="10_xw4su"]
+[ext_resource type="Texture2D" uid="uid://bqye4dx0or0qy" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-5.png" id="11_eennk"]
+[ext_resource type="Texture2D" uid="uid://dl6prcp6v4t08" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy5.png" id="11_x2ho1"]
+[ext_resource type="Texture2D" uid="uid://dd0ip0qg4ox4t" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy6.png" id="12_eennk"]
+[ext_resource type="Texture2D" uid="uid://2nd51npuyht6" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-6.png" id="12_yyr8h"]
+[ext_resource type="Texture2D" uid="uid://bxspdek28uqpv" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-7.png" id="13_i325y"]
+[ext_resource type="Texture2D" uid="uid://cjtkg1c1yg820" path="res://assets/Characters/Players/Foxy/Sprites/hurt/player-hurt-1.png" id="13_yyr8h"]
+[ext_resource type="Texture2D" uid="uid://1usbfdlstn2m" path="res://assets/Characters/Players/Foxy/Sprites/hurt/player-hurt-2.png" id="14_i325y"]
+[ext_resource type="Texture2D" uid="uid://eeo3hnf63h7k" path="res://assets/Characters/Players/Foxy/Sprites/Hurt2/hurt-2.png" id="15_eu7rt"]
+[ext_resource type="Texture2D" uid="uid://dsyq8fl7eqwxm" path="res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-1.png" id="16_nm06d"]
+[ext_resource type="Texture2D" uid="uid://bvu80fujo0v7k" path="res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-2.png" id="17_vhfjx"]
+[ext_resource type="Texture2D" uid="uid://4hjev5gyfwvh" path="res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-3.png" id="18_kveqs"]
+[ext_resource type="Texture2D" uid="uid://c4stxj0lyps3t" path="res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-4.png" id="19_d3djb"]
+[ext_resource type="Texture2D" uid="uid://c8vntogxxjjf1" path="res://assets/Characters/Players/Foxy/Sprites/jump/player-jump-1.png" id="20_lre2g"]
+[ext_resource type="Texture2D" uid="uid://b62dxlab52y7e" path="res://assets/Characters/Players/Foxy/Sprites/jump/player-jump-2.png" id="21_1a3po"]
+[ext_resource type="Texture2D" uid="uid://b31fxkp0p21n0" path="res://assets/Characters/Players/Foxy/Sprites/LookUp/lookUp.png" id="22_r04tr"]
+[ext_resource type="Texture2D" uid="uid://cho6rv5n3qpug" path="res://assets/Characters/Players/Foxy/Sprites/Roll/Roll1.png" id="23_vuo2u"]
+[ext_resource type="Texture2D" uid="uid://c03mrwba2niyl" path="res://assets/Characters/Players/Foxy/Sprites/Roll/Roll2.png" id="24_8agqw"]
+[ext_resource type="Texture2D" uid="uid://v3afbvuqd0dh" path="res://assets/Characters/Players/Foxy/Sprites/Roll/Roll3.png" id="25_ustk3"]
+[ext_resource type="Texture2D" uid="uid://bx5jashu4glrv" path="res://assets/Characters/Players/Foxy/Sprites/Roll/Roll4.png" id="26_1ylbe"]
+[ext_resource type="Texture2D" uid="uid://b2jto30ibqq1w" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-1.png" id="27_sqgfh"]
+[ext_resource type="Texture2D" uid="uid://rn1ycjqgwfkn" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-2.png" id="28_e03cv"]
+[ext_resource type="Texture2D" uid="uid://cdo8a6nmwmmn4" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-3.png" id="29_xehjw"]
+[ext_resource type="Texture2D" uid="uid://ck26oyy4dge76" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-4.png" id="30_27xwf"]
+[ext_resource type="Texture2D" uid="uid://dr44ecmu45chw" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-5.png" id="31_808i2"]
+[ext_resource type="Texture2D" uid="uid://blr8u5he0tqi2" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-6.png" id="32_kde38"]
+[ext_resource type="Texture2D" uid="uid://7bsf4dcga882" path="res://assets/Characters/Players/Foxy/Sprites/Victory/Victory.png" id="33_fam5e"]
+[ext_resource type="Texture2D" uid="uid://yt5dsn20mftr" path="res://assets/Characters/Players/Foxy/Sprites/WallGrab/wall-grab1.png" id="34_4ufoc"]
+[ext_resource type="Texture2D" uid="uid://d1vmu2iy2cf0l" path="res://assets/Characters/Players/Foxy/Sprites/WallGrab/wall-grab2.png" id="35_4wb44"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l2ndj"]
+radius = 7.0
+height = 24.650906
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qydi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yf47d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jvfa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ib3vm")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yf47d")
+}],
+"loop": true,
+"name": &"climb_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vtj8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rqaa0")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7w4lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ww5s2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xw4su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x2ho1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_eennk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yyr8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i325y")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_o1b5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7w4lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ww5s2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xw4su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x2ho1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_eennk")
+}],
+"loop": true,
+"name": &"dizzy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_1a3po")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_yyr8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i325y")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_eu7rt")
+}],
+"loop": true,
+"name": &"hurt2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_nm06d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vhfjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kveqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d3djb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_lre2g")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_r04tr")
+}],
+"loop": true,
+"name": &"lookup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_vuo2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8agqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ustk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1ylbe")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_sqgfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_e03cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_xehjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_27xwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_808i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_kde38")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_fam5e")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_4ufoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_4wb44")
+}],
+"loop": true,
+"name": &"wallgrab",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_4n5ed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -9)
+scale = Vector2(1, 0.81132925)
+shape = SubResource("CapsuleShape2D_l2ndj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_3qydi")
+animation = &"idle"
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
+limit_left = 0
+limit_top = 0
+limit_right = 2290

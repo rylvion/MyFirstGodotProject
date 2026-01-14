@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt6s71xfhwnxe"]
+
+[ext_resource type="Script" uid="uid://cb2mhy2p3jui1" path="res://scripts/main.gd" id="1_iuonh"]
+[ext_resource type="PackedScene" uid="uid://drpff6640u0oa" path="res://scenes/backgrounds/BG.tscn" id="2_k2fmo"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_iuonh")
+
+[node name="BG" parent="." instance=ExtResource("2_k2fmo")]
+scroll_offset = Vector2(0, 4)
+
+[node name="Quit" type="Button" parent="."]
+z_index = 1
+offset_left = 743.0
+offset_top = 208.0
+offset_right = 947.0
+offset_bottom = 313.0
+tooltip_text = "This will quit the game"
+text = "Quit"
+
+[node name="Play" type="Button" parent="."]
+z_index = 1
+offset_left = 121.0
+offset_top = 196.0
+offset_right = 314.0
+offset_bottom = 301.0
+tooltip_text = "This is a start button xd"
+text = "Play"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

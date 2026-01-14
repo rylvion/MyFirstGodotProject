@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1di4kccoc356"
+path="res://.godot/imported/magic cliffs.ogg-93c7f40035b8567d26617cb1e46ffb86.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/adventure pack 2 ogg/magic cliffs.ogg"
+dest_files=["res://.godot/imported/magic cliffs.ogg-93c7f40035b8567d26617cb1e46ffb86.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

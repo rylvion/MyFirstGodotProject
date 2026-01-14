@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://l02r73o5w8f8"
+path="res://.godot/imported/megabot.ogg-8fe989adad1567a63bc6b548cddc6139.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/adventure pack 2 ogg/megabot.ogg"
+dest_files=["res://.godot/imported/megabot.ogg-8fe989adad1567a63bc6b548cddc6139.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

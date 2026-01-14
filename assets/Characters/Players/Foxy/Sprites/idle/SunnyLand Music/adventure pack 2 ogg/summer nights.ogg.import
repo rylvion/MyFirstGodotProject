@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfg6lbnh58g47"
+path="res://.godot/imported/summer nights.ogg-b1e184d7d4bdf44de139da55dfe24608.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Characters/Players/Foxy/Sprites/idle/SunnyLand Music/adventure pack 2 ogg/summer nights.ogg"
+dest_files=["res://.godot/imported/summer nights.ogg-b1e184d7d4bdf44de139da55dfe24608.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

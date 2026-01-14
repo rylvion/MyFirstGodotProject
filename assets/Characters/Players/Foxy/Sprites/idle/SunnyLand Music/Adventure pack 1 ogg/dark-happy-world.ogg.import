@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cy64jp1558oxh"
+path="res://.godot/imported/dark-happy-world.ogg-38ada4de2d109c09026994ac9038ba8e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Characters/Players/Foxy/Sprites/idle/SunnyLand Music/Adventure pack 1 ogg/dark-happy-world.ogg"
+dest_files=["res://.godot/imported/dark-happy-world.ogg-38ada4de2d109c09026994ac9038ba8e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

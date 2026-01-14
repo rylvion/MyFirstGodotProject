@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1f85wsjoxlye"
+path="res://.godot/imported/joyful.ogg-d04a9078ff7529e2b45103f1f2d47b94.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/adventure pack 2 ogg/joyful.ogg"
+dest_files=["res://.godot/imported/joyful.ogg-d04a9078ff7529e2b45103f1f2d47b94.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

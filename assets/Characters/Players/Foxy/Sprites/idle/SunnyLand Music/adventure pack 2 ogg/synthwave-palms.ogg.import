@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqaf8iejnw3is"
+path="res://.godot/imported/synthwave-palms.ogg-a04a9ab321b3a406503d57771052dcfe.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Characters/Players/Foxy/Sprites/idle/SunnyLand Music/adventure pack 2 ogg/synthwave-palms.ogg"
+dest_files=["res://.godot/imported/synthwave-palms.ogg-a04a9ab321b3a406503d57771052dcfe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
