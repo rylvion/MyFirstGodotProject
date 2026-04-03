@@ -21,7 +21,9 @@ addons/
 *.godot
 *.tscn~      
 *.tres~      
+*.uid
 
 # Build output / caches
 bin/
 .cache/
+builds/*.zip

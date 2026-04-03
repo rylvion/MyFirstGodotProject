@@ -5,7 +5,8 @@ const DEFAULT_SEGMENTS: Array = [
 	{ "y": 300, "x_min": 0,   "x_max": 276 },
 	{ "y": 300, "x_min": 312, "x_max": 352 },
 	{ "y": 300, "x_min": 568, "x_max": 800 },
-	{ "y": 425, "x_min": 832, "x_max": 1136 }
+	{ "y": 425, "x_min": 832, "x_max": 1136 },
+	{ "y": 300, "x_min": 1176, "x_max": 2284}
 ]
 
 var parent_node: Node2D

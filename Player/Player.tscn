@@ -1,63 +1,145 @@
 [gd_scene load_steps=45 format=3 uid="uid://cv0itlc7l3gjj"]
 
 [ext_resource type="Script" uid="uid://do3bx5vsb8fwg" path="res://Player/player.gd" id="1_4n5ed"]
-[ext_resource type="Texture2D" uid="uid://t6h27aqyqt87" path="res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-1.png" id="2_yf47d"]
-[ext_resource type="Texture2D" uid="uid://curttx7kmg4nm" path="res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-2.png" id="3_jvfa1"]
-[ext_resource type="Texture2D" uid="uid://cu4gl8xqkx36n" path="res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-3.png" id="4_ib3vm"]
-[ext_resource type="Texture2D" uid="uid://cc7iu1a2sm5t" path="res://assets/Characters/Players/Foxy/Sprites/crouch/player-crouch-1.png" id="5_vtj8b"]
-[ext_resource type="Texture2D" uid="uid://c0b71icwfb1xp" path="res://assets/Characters/Players/Foxy/Sprites/crouch/player-crouch-2.png" id="6_rqaa0"]
-[ext_resource type="Texture2D" uid="uid://dknm5g0kkkp37" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-1.png" id="7_7w4lt"]
-[ext_resource type="Texture2D" uid="uid://ch2whnu5jq6yc" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy1.png" id="7_o1b5h"]
-[ext_resource type="Texture2D" uid="uid://c54fkr5xq7boe" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy2.png" id="8_7w4lt"]
-[ext_resource type="Texture2D" uid="uid://cqlbidelxu7pr" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-2.png" id="8_ww5s2"]
-[ext_resource type="Texture2D" uid="uid://cayac2amjwamt" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy3.png" id="9_ww5s2"]
-[ext_resource type="Texture2D" uid="uid://b8vk4ieh6jscq" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-3.png" id="9_xw4su"]
-[ext_resource type="Texture2D" uid="uid://bq3qmjw4m8apd" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-4.png" id="10_x2ho1"]
-[ext_resource type="Texture2D" uid="uid://dnn1jbqlva1ru" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy4.png" id="10_xw4su"]
-[ext_resource type="Texture2D" uid="uid://bqye4dx0or0qy" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-5.png" id="11_eennk"]
-[ext_resource type="Texture2D" uid="uid://dl6prcp6v4t08" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy5.png" id="11_x2ho1"]
-[ext_resource type="Texture2D" uid="uid://dd0ip0qg4ox4t" path="res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy6.png" id="12_eennk"]
-[ext_resource type="Texture2D" uid="uid://2nd51npuyht6" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-6.png" id="12_yyr8h"]
-[ext_resource type="Texture2D" uid="uid://bxspdek28uqpv" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-7.png" id="13_i325y"]
-[ext_resource type="Texture2D" uid="uid://cjtkg1c1yg820" path="res://assets/Characters/Players/Foxy/Sprites/hurt/player-hurt-1.png" id="13_yyr8h"]
-[ext_resource type="Texture2D" uid="uid://1usbfdlstn2m" path="res://assets/Characters/Players/Foxy/Sprites/hurt/player-hurt-2.png" id="14_i325y"]
-[ext_resource type="Texture2D" uid="uid://eeo3hnf63h7k" path="res://assets/Characters/Players/Foxy/Sprites/Hurt2/hurt-2.png" id="15_eu7rt"]
-[ext_resource type="Texture2D" uid="uid://dsyq8fl7eqwxm" path="res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-1.png" id="16_nm06d"]
-[ext_resource type="Texture2D" uid="uid://bvu80fujo0v7k" path="res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-2.png" id="17_vhfjx"]
-[ext_resource type="Texture2D" uid="uid://4hjev5gyfwvh" path="res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-3.png" id="18_kveqs"]
-[ext_resource type="Texture2D" uid="uid://c4stxj0lyps3t" path="res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-4.png" id="19_d3djb"]
-[ext_resource type="Texture2D" uid="uid://c8vntogxxjjf1" path="res://assets/Characters/Players/Foxy/Sprites/jump/player-jump-1.png" id="20_lre2g"]
-[ext_resource type="Texture2D" uid="uid://b62dxlab52y7e" path="res://assets/Characters/Players/Foxy/Sprites/jump/player-jump-2.png" id="21_1a3po"]
-[ext_resource type="Texture2D" uid="uid://b31fxkp0p21n0" path="res://assets/Characters/Players/Foxy/Sprites/LookUp/lookUp.png" id="22_r04tr"]
-[ext_resource type="Texture2D" uid="uid://cho6rv5n3qpug" path="res://assets/Characters/Players/Foxy/Sprites/Roll/Roll1.png" id="23_vuo2u"]
-[ext_resource type="Texture2D" uid="uid://c03mrwba2niyl" path="res://assets/Characters/Players/Foxy/Sprites/Roll/Roll2.png" id="24_8agqw"]
-[ext_resource type="Texture2D" uid="uid://v3afbvuqd0dh" path="res://assets/Characters/Players/Foxy/Sprites/Roll/Roll3.png" id="25_ustk3"]
-[ext_resource type="Texture2D" uid="uid://bx5jashu4glrv" path="res://assets/Characters/Players/Foxy/Sprites/Roll/Roll4.png" id="26_1ylbe"]
-[ext_resource type="Texture2D" uid="uid://b2jto30ibqq1w" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-1.png" id="27_sqgfh"]
-[ext_resource type="Texture2D" uid="uid://rn1ycjqgwfkn" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-2.png" id="28_e03cv"]
-[ext_resource type="Texture2D" uid="uid://cdo8a6nmwmmn4" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-3.png" id="29_xehjw"]
-[ext_resource type="Texture2D" uid="uid://ck26oyy4dge76" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-4.png" id="30_27xwf"]
-[ext_resource type="Texture2D" uid="uid://dr44ecmu45chw" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-5.png" id="31_808i2"]
-[ext_resource type="Texture2D" uid="uid://blr8u5he0tqi2" path="res://assets/Characters/Players/Foxy/Sprites/run/player-run-6.png" id="32_kde38"]
-[ext_resource type="Texture2D" uid="uid://7bsf4dcga882" path="res://assets/Characters/Players/Foxy/Sprites/Victory/Victory.png" id="33_fam5e"]
-[ext_resource type="Texture2D" uid="uid://yt5dsn20mftr" path="res://assets/Characters/Players/Foxy/Sprites/WallGrab/wall-grab1.png" id="34_4ufoc"]
-[ext_resource type="Texture2D" uid="uid://d1vmu2iy2cf0l" path="res://assets/Characters/Players/Foxy/Sprites/WallGrab/wall-grab2.png" id="35_4wb44"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l2ndj"]
 radius = 7.0
 height = 24.650906
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3qydi"]
+load_path = "res://.godot/imported/player-climb-1.png-27ebf14522bf1290b7d1dc9a98ad05a7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3lat"]
+load_path = "res://.godot/imported/player-climb-2.png-0985c089af87532d9a0164f3a75bd31b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tok1r"]
+load_path = "res://.godot/imported/player-climb-3.png-361e04dce0c0ce6a13757569233cd0e6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ddoul"]
+load_path = "res://.godot/imported/player-crouch-1.png-48d5e8a9629e136d48c126a721b22d4d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8g4oa"]
+load_path = "res://.godot/imported/player-crouch-2.png-c5b947e7d0c70d5ab6dafa78a06f394c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ysni"]
+load_path = "res://.godot/imported/enemy-death-1.png-bc0c98e46736ea7383e12f5eb2d4fb21.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vlldt"]
+load_path = "res://.godot/imported/enemy-death-2.png-2f7af83e74630cc28e58e04929fdde90.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s1rgi"]
+load_path = "res://.godot/imported/enemy-death-3.png-d9b3069b7a0d33712a9f5de229d05264.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j23h2"]
+load_path = "res://.godot/imported/enemy-death-4.png-35b4e64d46738df03ef5fd08f6900165.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0j2ni"]
+load_path = "res://.godot/imported/enemy-death-5.png-3d5c561987458df0a958876b425bfea9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v0k0e"]
+load_path = "res://.godot/imported/enemy-death-6.png-1a2e3050374ba73f4da70ddfd8c358ed.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5wa8t"]
+load_path = "res://.godot/imported/enemy-death-7.png-a7ff0ca388234269195302f221a93c79.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p7tob"]
+load_path = "res://.godot/imported/Dizzy1.png-b84d2f3894070b535e513cc55f76a84f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dm7nj"]
+load_path = "res://.godot/imported/Dizzy2.png-4c911cbfe26df0516d89d6e5eef6ce80.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3mea3"]
+load_path = "res://.godot/imported/Dizzy3.png-010d95067f727b6f69be58a1c7a24b92.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7v5gs"]
+load_path = "res://.godot/imported/Dizzy4.png-00becffdbcb417612621ce9ffc95d923.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8sa4y"]
+load_path = "res://.godot/imported/Dizzy5.png-eb868c00e895c67c454bd88d97c00d07.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3nb2p"]
+load_path = "res://.godot/imported/Dizzy6.png-1654c2e3df1ecd055acfe34070339471.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d7xyo"]
+load_path = "res://.godot/imported/player-jump-2.png-04ddeb2a1f8b3f2a415eedc93fb71ca1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evw08"]
+load_path = "res://.godot/imported/player-hurt-1.png-ca50925e6ecbaac293e0253c6cff01c8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_roy6y"]
+load_path = "res://.godot/imported/player-hurt-2.png-c20ab276be42a5fa43e9ff613d4844d0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u5tep"]
+load_path = "res://.godot/imported/hurt-2.png-0d45c93cc7d8ff24277f9f2190bf73dd.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ps8ct"]
+load_path = "res://.godot/imported/player-idle-1.png-23aa0186f53cc5f3ff304845b4199dc5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7uipr"]
+load_path = "res://.godot/imported/player-idle-2.png-b96bcafeb11c173c3a69b93e388124c6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yifbt"]
+load_path = "res://.godot/imported/player-idle-3.png-47d7134e3ca0b797c491f4003a192344.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s0mko"]
+load_path = "res://.godot/imported/player-idle-4.png-b6e4f8ccebf5e767c203340b413ed239.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqjia"]
+load_path = "res://.godot/imported/player-jump-1.png-9a0defeeb290b9253b85f3bddd57ddc9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x70vp"]
+load_path = "res://.godot/imported/lookUp.png-93eca48bd84a72b33cfbfdcb78d2512c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wo5nf"]
+load_path = "res://.godot/imported/Roll1.png-31fdec372389db39173e6363fb1a86bf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_croik"]
+load_path = "res://.godot/imported/Roll2.png-8a98bd246a4cfd5e4cb46dd3089ca6b5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bgaaw"]
+load_path = "res://.godot/imported/Roll3.png-8b050025eaf369b821d044f6fc4d3394.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gv3fu"]
+load_path = "res://.godot/imported/Roll4.png-c83093fd73287c78d0be0e8148bb4fd4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xu7fl"]
+load_path = "res://.godot/imported/player-run-1.png-7688426f4c2bd0b83f65f31ebfcee60c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_78fhc"]
+load_path = "res://.godot/imported/player-run-2.png-5692c5eae2fbabd3f0d5cb914ab36dc2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4n5ed"]
+load_path = "res://.godot/imported/player-run-3.png-ea5d5317778d162c0b0aac46f5d3b35c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yf47d"]
+load_path = "res://.godot/imported/player-run-4.png-15b3bfc025b62e8fc37d982a8b088f8b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jvfa1"]
+load_path = "res://.godot/imported/player-run-5.png-3a233db57d55e51375e4c1d489f61b7f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ib3vm"]
+load_path = "res://.godot/imported/player-run-6.png-b233811132fee32aa47a96699ae07e36.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vtj8b"]
+load_path = "res://.godot/imported/Victory.png-2b97466c0702e3edc68561dc711f1af3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rqaa0"]
+load_path = "res://.godot/imported/wall-grab1.png-769009fd9f638ab0bf90ebcf4fa5f4cb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o1b5h"]
+load_path = "res://.godot/imported/wall-grab2.png-8faecfcaf72bb5ef5af1514fa055b890.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_3qydi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_yf47d")
+"texture": SubResource("CompressedTexture2D_3qydi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_jvfa1")
+"texture": SubResource("CompressedTexture2D_q3lat")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ib3vm")
+"texture": SubResource("CompressedTexture2D_tok1r")
 }],
 "loop": true,
 "name": &"climb",
@@ -65,7 +147,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_yf47d")
+"texture": SubResource("CompressedTexture2D_3qydi")
 }],
 "loop": true,
 "name": &"climb_idle",
@@ -73,10 +155,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_vtj8b")
+"texture": SubResource("CompressedTexture2D_ddoul")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_rqaa0")
+"texture": SubResource("CompressedTexture2D_8g4oa")
 }],
 "loop": true,
 "name": &"crouch",
@@ -84,25 +166,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_7w4lt")
+"texture": SubResource("CompressedTexture2D_6ysni")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_ww5s2")
+"texture": SubResource("CompressedTexture2D_vlldt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_xw4su")
+"texture": SubResource("CompressedTexture2D_s1rgi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_x2ho1")
+"texture": SubResource("CompressedTexture2D_j23h2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_eennk")
+"texture": SubResource("CompressedTexture2D_0j2ni")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_yyr8h")
+"texture": SubResource("CompressedTexture2D_v0k0e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_i325y")
+"texture": SubResource("CompressedTexture2D_5wa8t")
 }],
 "loop": false,
 "name": &"death",
@@ -110,22 +192,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_o1b5h")
+"texture": SubResource("CompressedTexture2D_p7tob")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7w4lt")
+"texture": SubResource("CompressedTexture2D_dm7nj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ww5s2")
+"texture": SubResource("CompressedTexture2D_3mea3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_xw4su")
+"texture": SubResource("CompressedTexture2D_7v5gs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_x2ho1")
+"texture": SubResource("CompressedTexture2D_8sa4y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_eennk")
+"texture": SubResource("CompressedTexture2D_3nb2p")
 }],
 "loop": true,
 "name": &"dizzy",
@@ -133,7 +215,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_1a3po")
+"texture": SubResource("CompressedTexture2D_d7xyo")
 }],
 "loop": true,
 "name": &"fall",
@@ -141,10 +223,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_yyr8h")
+"texture": SubResource("CompressedTexture2D_evw08")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_i325y")
+"texture": SubResource("CompressedTexture2D_roy6y")
 }],
 "loop": false,
 "name": &"hurt",
@@ -152,7 +234,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_eu7rt")
+"texture": SubResource("CompressedTexture2D_u5tep")
 }],
 "loop": true,
 "name": &"hurt2",
@@ -160,16 +242,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_nm06d")
+"texture": SubResource("CompressedTexture2D_ps8ct")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_vhfjx")
+"texture": SubResource("CompressedTexture2D_7uipr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_kveqs")
+"texture": SubResource("CompressedTexture2D_yifbt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_d3djb")
+"texture": SubResource("CompressedTexture2D_s0mko")
 }],
 "loop": true,
 "name": &"idle",
@@ -177,7 +259,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("20_lre2g")
+"texture": SubResource("CompressedTexture2D_hqjia")
 }],
 "loop": true,
 "name": &"jump",
@@ -185,7 +267,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_r04tr")
+"texture": SubResource("CompressedTexture2D_x70vp")
 }],
 "loop": true,
 "name": &"lookup",
@@ -193,16 +275,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_vuo2u")
+"texture": SubResource("CompressedTexture2D_wo5nf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_8agqw")
+"texture": SubResource("CompressedTexture2D_croik")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_ustk3")
+"texture": SubResource("CompressedTexture2D_bgaaw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_1ylbe")
+"texture": SubResource("CompressedTexture2D_gv3fu")
 }],
 "loop": true,
 "name": &"roll",
@@ -210,22 +292,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("27_sqgfh")
+"texture": SubResource("CompressedTexture2D_xu7fl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_e03cv")
+"texture": SubResource("CompressedTexture2D_78fhc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_xehjw")
+"texture": SubResource("CompressedTexture2D_4n5ed")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_27xwf")
+"texture": SubResource("CompressedTexture2D_yf47d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_808i2")
+"texture": SubResource("CompressedTexture2D_jvfa1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_kde38")
+"texture": SubResource("CompressedTexture2D_ib3vm")
 }],
 "loop": true,
 "name": &"run",
@@ -233,7 +315,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_fam5e")
+"texture": SubResource("CompressedTexture2D_vtj8b")
 }],
 "loop": true,
 "name": &"victory",
@@ -241,10 +323,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_4ufoc")
+"texture": SubResource("CompressedTexture2D_rqaa0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_4wb44")
+"texture": SubResource("CompressedTexture2D_o1b5h")
 }],
 "loop": true,
 "name": &"wallgrab",

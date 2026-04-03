@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=3 uid="uid://b4ouk0k7m8qs"]
+
+[ext_resource type="Script" uid="uid://u4py4xxcatnp" path="res://scripts/fireball.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bbdy8tmx26wfs" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball/Sprites/fireball-1.png" id="2_dax74"]
+[ext_resource type="Texture2D" uid="uid://bvwjb2vc8abg5" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball/Sprites/fireball-2.png" id="3_h0utr"]
+[ext_resource type="Texture2D" uid="uid://d0eh6v3knyjsm" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball/Sprites/fireball-3.png" id="4_iapai"]
+[ext_resource type="Texture2D" uid="uid://b6c8c85bde65o" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball/Sprites/fireball-4.png" id="5_wunie"]
+[ext_resource type="Texture2D" uid="uid://bp0tb75f7rdk1" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball/Sprites/fireball-5.png" id="6_jpugm"]
+[ext_resource type="Texture2D" uid="uid://mqbsjlx11yqt" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-1.png" id="7_0hpdg"]
+[ext_resource type="Texture2D" uid="uid://dm34s24b3gu36" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-2.png" id="8_ok1vr"]
+[ext_resource type="Texture2D" uid="uid://3ribdt5v5pbf" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-3.png" id="9_g3deu"]
+[ext_resource type="Texture2D" uid="uid://bcwjfvykpoprj" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-4.png" id="10_w26rh"]
+[ext_resource type="Texture2D" uid="uid://64e8q4uf36e1" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-5.png" id="11_ufl7b"]
+[ext_resource type="Texture2D" uid="uid://bclj7eliwv0un" path="res://MyFirstGodotProject/assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-6.png" id="12_e24ou"]
+
+[sub_resource type="SpriteFrames" id="fireball_frames"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dax74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h0utr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iapai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wunie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jpugm")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0hpdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ok1vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_g3deu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w26rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ufl7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e24ou")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="collision_shape"]
+radius = 8.0
+
+[node name="Fireball" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("fireball_frames")
+animation = &"fly"
+frame_progress = 0.63085705
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("collision_shape")

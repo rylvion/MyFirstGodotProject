@@ -1,76 +1,101 @@
-# MyFirstGodotProject
-My first game using godot, using the freecodecamp tutorial https://www.youtube.com/watch?v=S8lMTwSRoRg. 
+# Tiny Quest
+A small 2D action-platformer made in Godot where you survive waves, stack gold, and slowly become a menace.
 
-You are a young adventurer exploring a mystical world. Slimes and frogs roam the lands.
-Your mission: survive, collect treasure, and grow stronger with every battle. 
-* Use arrow keys or WASD to move
-* Gain gold by jumping on enemies, and collecting cherrys
-* Touch a mob, i double dog dare you _they'll explode on impact_
-### Enemy dictionairy
+Built from a freeCodeCamp tutorial and then expanded with extra systems, balancing, and UI polish.
 
-#### Slime
-A gooey green blob that bounces clumsily along the ground. It may look harmless, but it attacks any adventurer it sees.
+## Play
+Windows build: https://github.com/rylvion/MyFirstGodotProject/releases/
 
-RARITY: Common
-##### **Stats:**
-- SPEED: 50
-- DAMAGE: 3
-- GOLD: 5
+## Core Idea
+You are a young adventurer in a dangerous world full of slimes and frogs.
 
-#### Frog
-A sly amphibian that leaps faster than it looks. Tougher than the slime
+Your mission:
+- Survive wave after wave.
+- Farm gold from enemies and cherries.
+- Buy levels to boost your Max HP.
+- Keep going until the game starts fighting back hard.
 
-RARITY: Common
-##### **Stats:**
-- SPEED: 80
-- DAMAGE: 3
-- GOLD: 5
+## Controls
+- Move: WASD or Arrow Keys
+- Jump/Climb Up: W, Up Arrow, or Space
+- Climb Down: S or Down Arrow
+- Attack (Fireball): X, Enter, or F
+- Quick Level-Up: R
+- Quit to Menu: Q or Escape
 
-___
-## Process
+## Gameplay Systems
+- Wave-based enemy spawning with timed delays.
+- Mixed enemy pool (Frog/Slime) with level-aware spawn weighting.
+- Leveling system with exponential cost growth.
+- Exponential enemy difficulty scaling. 
+- Gold scaling that also increases with level. (so you can keep up with costs)
+- Fireball cooldown scaling by level (early linear, late exponential slowdown).
+- Fireball also resets on level-up to reward progression.
+- Ladder climbing support.
+- Save/load persistence. 
+- HUD for HP, Gold, Level, Deaths, Wave info, and Fireball cooldown feedback.
+- Jump on enemies to kill them, or use fireballs for ranged attacks.
+- Enemies explode on contact, so be careful!
+- Cherries spawn randomly and give gold when collected.
+- Death counter to track your pain and suffering.
 
-When I first opened Godot, the node system felt confusing, like wandering through a maze. By the end of the tutorial, I could make my character jump, attack, and even save progress - it felt like I had unlocked a whole new world.
+## Current Enemy Dictionary
+### Slime
+A gooey green blob that looks harmless right until it tackles you.
 
-## in the video i learnt:
-- how to create my first 2D scene and understanding godot’s node‑based structure
-- animating a player character, including movement and jumping
-- designing enemies and giving them simple AI behaviors
-- working with tilemaps to build levels
-- adding UI elements, such as gold counters or health
-- Game auto-saves _(so ppl have more to complain about )_
-basically the foundation of the godot engine
+Rarity: Common
+- Base Speed: 50
+- Base Damage: 3
+- Base Gold: 5
 
-## what i added: _(that the video did not include)_
-- advanced death handling
-- advanced animated background
-- added 1 extra mob (slime)
-- added ladder detection
-- Levelling system with an exponentional growth:
-  - _(you wont get too stacked, ill make sure of that [next update... increase rates and lower max hp rates trust trust 💔])_
-  - **gold purchases:** ×1.15 per level
-  - **max hp:** ×1.1 per level
-- Death Counter _(because I am counting your pain)_
+### Frog
+Fast, rude, and stronger than it looks.
 
-## Future 
-next time in ~~dragon ball z~~ _(wait wrong anime)_:
-- add music _(so it stops being silent despair)_
-- making enemy scripts more modular
-- add more mobs _(frogs and slimes are lonely [you wont guess what they've been doing at 3 am])_
-- added ladder detection
-- more maps (such as a mine)
-- boss
-- add an inventory system/gui
-- mobile support???
-- suggest more... (will be open to further ) 
+Rarity: Common
+- Base Speed: 80
+- Base Damage: 5
+- Base Gold: 10
+
+## Economy and Scaling
+### Level progression
+- HP upgrade cost grows by x1.15 each level.
+- Max HP grows by x1.1 each level.
+
+### Enemy scaling
+- Enemy Speed and Damage scale by x1.05^(level - 1).
+- Enemy Gold reward scales by x1.03^(level - 1) from each enemy's own base gold.
+
+### Fireball cooldown scaling
+- Levels 1-20: cooldown decreases linearly from 3.0s to 1.0s.
+- Level 21+: cooldown decreases exponentially (slower gains).
+- Hard floor: cooldown never goes below 0.05s.
+
+## Progress / What Was Added Beyond Tutorial
+- Improved death handling.
+- Additional enemy balancing and scaling logic.
+- Ladder detection and climb behavior.
+- Wave banner + cooldown UI feedback.
+- Extra quality-of-life controls (quick level-up keybind).
+- Better progression pacing (cost growth, reward growth, cooldown growth).
+
+## Roadmap
+- Rebirth system implementation.
+- More enemy types.
+- More maps/biomes.
+- Boss encounter.
+- Inventory + UI improvements.
+- Better audio integration and balancing.
+- Mobile support experiments.
+
+## Dev Notes
+First Godot project, still actively evolving. Balance changes happen often while systems get stress-tested.
+
+If something feels broken, overpowered, or unfair, that is not a bug.
+That is a challenge.
+Probably.
 
 ## Credits
-huge thanks too [@ansimuz](https://itch.io/profile/ansimuz) for the [Sunny land pixel assets](https://ansimuz.itch.io/sunny-land-pixel-game-art)
-and of course [freeCodeCamp](https://freecodecamp.org) for the actual tutorial
-
-## Playable Demo
-
-Try the game here: https://rylvion.github.io/MyFirstGodotProject
-
-## Downloads
-
-Windows build: https://github.com/rylvion/MyFirstGodotProject/releases/download/v1.0/TinyQuest-Windows.zip
+- Sunny Land pixel assets by @ansimuz:
+  https://ansimuz.itch.io/sunny-land-pixel-game-art
+- freeCodeCamp tutorial inspiration:
+  https://www.youtube.com/watch?v=S8lMTwSRoRg

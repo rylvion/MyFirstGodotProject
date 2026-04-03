@@ -93,7 +93,7 @@ size = Vector2(27.371906, 21.381557)
 radius = 104.307236
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yakrr"]
-size = Vector2(33.5, 21)
+size = Vector2(32.000004, 21)
 
 [node name="frog" type="CharacterBody2D"]
 script = ExtResource("1_72bdi")
@@ -124,7 +124,7 @@ debug_color = Color(1, 0, 0, 0.050980393)
 scale = Vector2(0.99999994, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
-position = Vector2(0.75, 2)
+position = Vector2(-4.768372e-07, 2)
 shape = SubResource("RectangleShape2D_yakrr")
 debug_color = Color(0.81410164, 0.38590688, 0.00066478195, 0.41960785)
 

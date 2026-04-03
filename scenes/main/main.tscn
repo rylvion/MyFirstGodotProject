@@ -27,5 +27,18 @@ offset_bottom = 301.0
 tooltip_text = "This is a start button xd"
 text = "Play"
 
+[node name="Button" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 191.0
+offset_bottom = 64.0
+text = "❌ Reset Progress 🤡"
+
+[node name="ResetDialog" type="ConfirmationDialog" parent="."]
+title = "[DEBUG] Reset Progress?"
+size = Vector2i(300, 100)
+
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_reset_button_pressed"]
+[connection signal="confirmed" from="ResetDialog" to="." method="_on_reset_dialogue_confirmed"]
