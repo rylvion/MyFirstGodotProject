@@ -26,4 +26,4 @@ addons/
 # Build output / caches
 bin/
 .cache/
-builds/*.zip
+builds/
