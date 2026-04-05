@@ -1,8 +1,10 @@
 extends Area2D
 const GOLD = 3
+const CHERRY_GROUP: StringName = &"cherry_collectable"
 
 
 func _ready() -> void:
+	add_to_group(CHERRY_GROUP)
 	$AnimatedSprite2D.play("idle")
 
 func _on_body_entered(body: Node2D) -> void:
