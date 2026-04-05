@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bjol0gi3b5fdc" path="res://scripts/ui_hud.gd" id="10_ui"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vx3kp"]
-load_path = "res://.godot/imported/tileset.png-1f68686ca69d5e2af64dfef0eeb2fe17.ctex"
+load_path = "res://.godot/imported/tileset.png-cfba9236d001922e34fb641b37f8c6dc.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eu7l1"]
 texture = SubResource("CompressedTexture2D_vx3kp")
@@ -202,7 +202,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_eu7l1")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1g4j"]
-load_path = "res://.godot/imported/back.png-67b30e357f59a48f1f1882b65f913ad1.ctex"
+load_path = "res://.godot/imported/back.png-0b88c5bf2ef2181fb756dd508cdf6d89.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_js7pq"]
 size = Vector2(20, 306)

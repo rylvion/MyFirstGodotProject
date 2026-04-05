@@ -16,9 +16,90 @@ var attack_timer: float = 0.0
 var fireball_scene: PackedScene = preload("res://scenes/projectiles/fireball.tscn")
 
 func _ready() -> void:
+	_ensure_sprite_frames_loaded()
 	sprite.play("idle")
 	if Game.has_signal("level_changed"):
 		Game.connect("level_changed", Callable(self, "_on_level_changed"))
+
+func _ensure_sprite_frames_loaded() -> void:
+	if sprite == null:
+		return
+
+	var fallback_frames := SpriteFrames.new()
+	_add_fallback_animation(fallback_frames, "idle", [
+		"res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-1.png",
+		"res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-2.png",
+		"res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-3.png",
+		"res://assets/Characters/Players/Foxy/Sprites/idle/player-idle-4.png"
+	], true, 5.0)
+	_add_fallback_animation(fallback_frames, "run", [
+		"res://assets/Characters/Players/Foxy/Sprites/run/player-run-1.png",
+		"res://assets/Characters/Players/Foxy/Sprites/run/player-run-2.png",
+		"res://assets/Characters/Players/Foxy/Sprites/run/player-run-3.png",
+		"res://assets/Characters/Players/Foxy/Sprites/run/player-run-4.png",
+		"res://assets/Characters/Players/Foxy/Sprites/run/player-run-5.png",
+		"res://assets/Characters/Players/Foxy/Sprites/run/player-run-6.png"
+	], true, 7.0)
+	_add_fallback_animation(fallback_frames, "jump", ["res://assets/Characters/Players/Foxy/Sprites/jump/player-jump-1.png"], true, 5.0)
+	_add_fallback_animation(fallback_frames, "fall", ["res://assets/Characters/Players/Foxy/Sprites/jump/player-jump-2.png"], true, 5.0)
+	_add_fallback_animation(fallback_frames, "climb", [
+		"res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-1.png",
+		"res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-2.png",
+		"res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-3.png"
+	], true, 5.0)
+	_add_fallback_animation(fallback_frames, "climb_idle", ["res://assets/Characters/Players/Foxy/Sprites/climb/player-climb-1.png"], true, 5.0)
+	_add_fallback_animation(fallback_frames, "crouch", [
+		"res://assets/Characters/Players/Foxy/Sprites/crouch/player-crouch-1.png",
+		"res://assets/Characters/Players/Foxy/Sprites/crouch/player-crouch-2.png"
+	], true, 5.0)
+	_add_fallback_animation(fallback_frames, "hurt", [
+		"res://assets/Characters/Players/Foxy/Sprites/hurt/player-hurt-1.png",
+		"res://assets/Characters/Players/Foxy/Sprites/hurt/player-hurt-2.png"
+	], false, 5.0)
+	_add_fallback_animation(fallback_frames, "hurt2", ["res://assets/Characters/Players/Foxy/Sprites/Hurt2/hurt-2.png"], true, 5.0)
+	_add_fallback_animation(fallback_frames, "lookup", ["res://assets/Characters/Players/Foxy/Sprites/LookUp/lookUp.png"], true, 5.0)
+	_add_fallback_animation(fallback_frames, "roll", [
+		"res://assets/Characters/Players/Foxy/Sprites/Roll/Roll1.png",
+		"res://assets/Characters/Players/Foxy/Sprites/Roll/Roll2.png",
+		"res://assets/Characters/Players/Foxy/Sprites/Roll/Roll3.png",
+		"res://assets/Characters/Players/Foxy/Sprites/Roll/Roll4.png"
+	], true, 5.0)
+	_add_fallback_animation(fallback_frames, "wallgrab", [
+		"res://assets/Characters/Players/Foxy/Sprites/WallGrab/wall-grab1.png",
+		"res://assets/Characters/Players/Foxy/Sprites/WallGrab/wall-grab2.png"
+	], true, 5.0)
+	_add_fallback_animation(fallback_frames, "dizzy", [
+		"res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy1.png",
+		"res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy2.png",
+		"res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy3.png",
+		"res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy4.png",
+		"res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy5.png",
+		"res://assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy6.png"
+	], true, 5.0)
+	_add_fallback_animation(fallback_frames, "death", [
+		"res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-1.png",
+		"res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-2.png",
+		"res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-3.png",
+		"res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-4.png",
+		"res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-5.png",
+		"res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-6.png",
+		"res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-7.png"
+	], false, 5.0)
+	_add_fallback_animation(fallback_frames, "victory", ["res://assets/Characters/Players/Foxy/Sprites/Victory/Victory.png"], true, 5.0)
+
+	if fallback_frames.get_frame_count("idle") > 0:
+		sprite.sprite_frames = fallback_frames
+		sprite.visible = true
+
+func _add_fallback_animation(frames: SpriteFrames, name: String, texture_paths: Array[String], loop: bool, speed: float) -> void:
+	if not frames.has_animation(name):
+		frames.add_animation(name)
+	frames.set_animation_loop(name, loop)
+	frames.set_animation_speed(name, speed)
+	for path in texture_paths:
+		var texture: Texture2D = load(path)
+		if texture != null:
+			frames.add_frame(name, texture)
 
 func _on_level_changed(_new_level: int) -> void:
 	attack_timer = 0.0

@@ -43,22 +43,22 @@ load_path = "res://.godot/imported/enemy-death-6.png-1a2e3050374ba73f4da70ddfd8c
 load_path = "res://.godot/imported/enemy-death-7.png-a7ff0ca388234269195302f221a93c79.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p7tob"]
-load_path = "res://.godot/imported/Dizzy1.png-b84d2f3894070b535e513cc55f76a84f.ctex"
+load_path = "res://.godot/imported/Dizzy1.png-c9e9230bbafdd72e65ee7a288ecd9e49.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dm7nj"]
-load_path = "res://.godot/imported/Dizzy2.png-4c911cbfe26df0516d89d6e5eef6ce80.ctex"
+load_path = "res://.godot/imported/Dizzy2.png-5735d6939032d12da549846805d545cb.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3mea3"]
-load_path = "res://.godot/imported/Dizzy3.png-010d95067f727b6f69be58a1c7a24b92.ctex"
+load_path = "res://.godot/imported/Dizzy3.png-39e4086b8602cb1d28bea285da6ed07c.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7v5gs"]
-load_path = "res://.godot/imported/Dizzy4.png-00becffdbcb417612621ce9ffc95d923.ctex"
+load_path = "res://.godot/imported/Dizzy4.png-61d43b2c81a22ba5443d67002145c61a.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8sa4y"]
-load_path = "res://.godot/imported/Dizzy5.png-eb868c00e895c67c454bd88d97c00d07.ctex"
+load_path = "res://.godot/imported/Dizzy5.png-edce07a1fd7523ca1c33eb7ddfa11a18.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3nb2p"]
-load_path = "res://.godot/imported/Dizzy6.png-1654c2e3df1ecd055acfe34070339471.ctex"
+load_path = "res://.godot/imported/Dizzy6.png-238e5bf639d3b63dc16e51b2db00e91b.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d7xyo"]
 load_path = "res://.godot/imported/player-jump-2.png-04ddeb2a1f8b3f2a415eedc93fb71ca1.ctex"
@@ -88,19 +88,19 @@ load_path = "res://.godot/imported/player-idle-4.png-b6e4f8ccebf5e767c203340b413
 load_path = "res://.godot/imported/player-jump-1.png-9a0defeeb290b9253b85f3bddd57ddc9.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x70vp"]
-load_path = "res://.godot/imported/lookUp.png-93eca48bd84a72b33cfbfdcb78d2512c.ctex"
+load_path = "res://.godot/imported/lookUp.png-867497bc22d3a0c58081c34fa20c0735.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wo5nf"]
-load_path = "res://.godot/imported/Roll1.png-31fdec372389db39173e6363fb1a86bf.ctex"
+load_path = "res://.godot/imported/Roll1.png-3a809929316660020fa9c92d4035a4e0.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_croik"]
-load_path = "res://.godot/imported/Roll2.png-8a98bd246a4cfd5e4cb46dd3089ca6b5.ctex"
+load_path = "res://.godot/imported/Roll2.png-7229e20d2b7b0c7699141f16dace36a2.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bgaaw"]
-load_path = "res://.godot/imported/Roll3.png-8b050025eaf369b821d044f6fc4d3394.ctex"
+load_path = "res://.godot/imported/Roll3.png-d9fd6e8ee07a72516392d7d0a562d57e.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gv3fu"]
-load_path = "res://.godot/imported/Roll4.png-c83093fd73287c78d0be0e8148bb4fd4.ctex"
+load_path = "res://.godot/imported/Roll4.png-2b662cf5f11bfa051c6833be9095653b.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xu7fl"]
 load_path = "res://.godot/imported/player-run-1.png-7688426f4c2bd0b83f65f31ebfcee60c.ctex"
@@ -121,7 +121,7 @@ load_path = "res://.godot/imported/player-run-5.png-3a233db57d55e51375e4c1d489f6
 load_path = "res://.godot/imported/player-run-6.png-b233811132fee32aa47a96699ae07e36.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vtj8b"]
-load_path = "res://.godot/imported/Victory.png-2b97466c0702e3edc68561dc711f1af3.ctex"
+load_path = "res://.godot/imported/Victory.png-7c5010bc84807a912bcea22136a19891.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rqaa0"]
 load_path = "res://.godot/imported/wall-grab1.png-769009fd9f638ab0bf90ebcf4fa5f4cb.ctex"
@@ -334,6 +334,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
+z_index = 10
 script = ExtResource("1_4n5ed")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
