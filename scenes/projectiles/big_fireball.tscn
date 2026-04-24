@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=3 uid="uid://uk6s4c0u4qsd"]
+
+[ext_resource type="Script" uid="uid://u4py4xxcatnp" path="res://scripts/fireball.gd" id="1_fireball"]
+[ext_resource type="Texture2D" uid="uid://sti1yrpmxe11" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/fire-ball/_0000_Layer-1.png" id="1_q3l0p"]
+[ext_resource type="Texture2D" uid="uid://du4ew5e0vkpev" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/fire-ball/_0001_Layer-2.png" id="2_c3ubr"]
+[ext_resource type="Texture2D" uid="uid://b0bvjhpdq7yqs" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/fire-ball/_0002_Layer-3.png" id="3_q5moe"]
+[ext_resource type="Texture2D" uid="uid://mqbsjlx11yqt" path="res://assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-1.png" id="4_admo3"]
+[ext_resource type="Texture2D" uid="uid://dm34s24b3gu36" path="res://assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-2.png" id="5_1pop1"]
+[ext_resource type="Texture2D" uid="uid://3ribdt5v5pbf" path="res://assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-3.png" id="6_go72k"]
+[ext_resource type="Texture2D" uid="uid://bcwjfvykpoprj" path="res://assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-4.png" id="7_oj820"]
+[ext_resource type="Texture2D" uid="uid://64e8q4uf36e1" path="res://assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-5.png" id="8_0e13i"]
+[ext_resource type="Texture2D" uid="uid://bclj7eliwv0un" path="res://assets/Props Items and VFX/fireball-hit/Sprites/fireball-hit-6.png" id="9_g3okq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmhrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q3l0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3ubr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q5moe")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_admo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1pop1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_go72k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oj820")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0e13i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_g3okq")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mat4l"]
+size = Vector2(1.9034693, 21.851345)
+
+[node name="big_fireball" type="Area2D"]
+position = Vector2(0, 24)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_fireball")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-11.999983, -28.000004)
+scale = Vector2(7.538461, 6.896551)
+sprite_frames = SubResource("SpriteFrames_rmhrb")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -23.999998)
+rotation = -3.1415925
+scale = Vector2(86.46891, -3.508456)
+shape = SubResource("RectangleShape2D_mat4l")

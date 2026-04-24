@@ -1,97 +1,65 @@
-[gd_scene load_steps=28 format=3 uid="uid://bfqjqvrw8kqe1"]
+[gd_scene load_steps=38 format=3 uid="uid://bfqjqvrw8kqe1"]
 
 [ext_resource type="Script" uid="uid://dfcnj1bh4qbhn" path="res://scripts/enemies/slime.gd" id="1_o2fkb"]
+[ext_resource type="Texture2D" uid="uid://bp13n1mrlnoc4" path="res://assets/Props Items and VFX/enemy-death 2/Sprites/enemy-death-1.png" id="9_o5sr2"]
+[ext_resource type="Texture2D" uid="uid://drk1ugl2f5cfs" path="res://assets/Props Items and VFX/enemy-death 2/Sprites/enemy-death-2.png" id="10_84gbg"]
+[ext_resource type="Texture2D" uid="uid://m4a7tdte3aij" path="res://assets/Props Items and VFX/enemy-death 2/Sprites/enemy-death-3.png" id="11_7ji7s"]
+[ext_resource type="Texture2D" uid="uid://cfifpl6s1hgd8" path="res://assets/Props Items and VFX/enemy-death 2/Sprites/enemy-death-4.png" id="12_yutl4"]
+[ext_resource type="Texture2D" uid="uid://bnbypfkantge4" path="res://sprites/32size/frame_012.png" id="21_42isq"]
+[ext_resource type="Texture2D" uid="uid://dep31u7yu31ml" path="res://sprites/32size/frame_004.png" id="22_hssac"]
+[ext_resource type="Texture2D" uid="uid://dfwii30ge5k46" path="res://sprites/32size/frame_001.png" id="23_lyvjc"]
+[ext_resource type="Texture2D" uid="uid://bayapkv1ixgfs" path="res://sprites/32size/frame_002.png" id="24_e57hx"]
+[ext_resource type="Texture2D" uid="uid://ugp64656a21u" path="res://sprites/32size/frame_003.png" id="25_8apxg"]
+[ext_resource type="Texture2D" uid="uid://c4hetmy25f81i" path="res://sprites/32size/frame_005.png" id="26_7c32u"]
+[ext_resource type="Texture2D" uid="uid://buj4pfjwhsofs" path="res://sprites/32size/frame_006.png" id="27_kfoio"]
+[ext_resource type="Texture2D" uid="uid://c24iv6kruejqp" path="res://sprites/32size/frame_007.png" id="28_t0774"]
+[ext_resource type="Texture2D" uid="uid://bwf8565f18f7v" path="res://sprites/32size/frame_008.png" id="29_mg1p1"]
+[ext_resource type="Texture2D" uid="uid://csm66sdn2wyb" path="res://sprites/32size/frame_009.png" id="30_xa24f"]
+[ext_resource type="Texture2D" uid="uid://cl1wdgtvt60b2" path="res://sprites/32size/frame_010.png" id="31_31235"]
+[ext_resource type="Texture2D" uid="uid://0p8mjg24kekk" path="res://sprites/32size/frame_011.png" id="32_f4120"]
+[ext_resource type="Texture2D" uid="uid://d3yiwbcwewt24" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer3.png" id="CompressedTexture2D_4h4y0"]
+[ext_resource type="Texture2D" uid="uid://btyhwethrkh3c" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle8.png" id="CompressedTexture2D_84gbg"]
+[ext_resource type="Texture2D" uid="uid://cxbsyneq80mog" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer2.png" id="CompressedTexture2D_ahq63"]
+[ext_resource type="Texture2D" uid="uid://drrmhp0w8d1sy" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer5.png" id="CompressedTexture2D_ankfk"]
+[ext_resource type="Texture2D" uid="uid://rowo5d8v1vbf" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle1.png" id="CompressedTexture2D_at850"]
+[ext_resource type="Texture2D" uid="uid://swc75wmy0ndx" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer4.png" id="CompressedTexture2D_b58ev"]
+[ext_resource type="Texture2D" uid="uid://vpkd341tq1sd" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer7.png" id="CompressedTexture2D_bhme6"]
+[ext_resource type="Texture2D" uid="uid://cf514f5u57eib" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer6.png" id="CompressedTexture2D_e12yk"]
+[ext_resource type="Texture2D" uid="uid://cf2nem0nkf634" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle6.png" id="CompressedTexture2D_m4uwr"]
+[ext_resource type="Texture2D" uid="uid://cn40vhkdhbntf" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle4.png" id="CompressedTexture2D_nx7r3"]
+[ext_resource type="Texture2D" uid="uid://bbxie8dy2g05o" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle7.png" id="CompressedTexture2D_o5sr2"]
+[ext_resource type="Texture2D" uid="uid://3r8wcaywt1ay" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle5.png" id="CompressedTexture2D_rdhaw"]
+[ext_resource type="Texture2D" uid="uid://brr6l2irrk5dl" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer1.png" id="CompressedTexture2D_rldp6"]
+[ext_resource type="Texture2D" uid="uid://dqamgksdokmt8" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle3.png" id="CompressedTexture2D_tvrjd"]
+[ext_resource type="Texture2D" uid="uid://c7c1kjo4oinu1" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle2.png" id="CompressedTexture2D_wbf5k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5itsj"]
 radius = 16.0
 height = 32.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rldp6"]
-load_path = "res://.godot/imported/slimer1.png-ad61904f4d9308b318f36ed8a4417c07.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ahq63"]
-load_path = "res://.godot/imported/slimer2.png-8314c9906e359a61278700255c411dd6.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4h4y0"]
-load_path = "res://.godot/imported/slimer3.png-7c6fab0889cd70ad05368bce4e01725e.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b58ev"]
-load_path = "res://.godot/imported/slimer4.png-42b223752fbd78f8ccd1209b2ba1c350.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ankfk"]
-load_path = "res://.godot/imported/slimer5.png-fdaed5a0e38977f778db399cca88398f.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e12yk"]
-load_path = "res://.godot/imported/slimer6.png-863e0312a1c28c9a4ca30cd20325d62e.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bhme6"]
-load_path = "res://.godot/imported/slimer7.png-29c9ac0a7b4a2b126f68099767df4d4e.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uhx0m"]
-load_path = "res://.godot/imported/enemy-death-1.png-5f29dc6c38fa7737212e226f724732ff.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7uxu4"]
-load_path = "res://.godot/imported/enemy-death-2.png-132376d3959c383368935d2ce90cff4e.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mdcui"]
-load_path = "res://.godot/imported/enemy-death-3.png-af2ad7a4d80a6df16d323dd1396aad73.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ikdmk"]
-load_path = "res://.godot/imported/enemy-death-4.png-2dd996d9579e9aaba3b586375411e7ee.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jjup5"]
-load_path = "res://.godot/imported/enemy-death-5.png-6ad18d7b3b87f0569bf5d4b3a9ac1f38.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wfyvu"]
-load_path = "res://.godot/imported/enemy-death-6.png-4d8aa747ec09e8aa0e81ada68252f243.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_at850"]
-load_path = "res://.godot/imported/slimer-idle1.png-b3f8201e15530255fbabfb79c39e0763.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbf5k"]
-load_path = "res://.godot/imported/slimer-idle2.png-87e579002c69a9c9465473e5c3d4610b.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tvrjd"]
-load_path = "res://.godot/imported/slimer-idle3.png-abf419b6ee49a7375c899bc5e1a2b4a9.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nx7r3"]
-load_path = "res://.godot/imported/slimer-idle4.png-7e05b85aa5b2799c6c2aec6b17b0c08a.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rdhaw"]
-load_path = "res://.godot/imported/slimer-idle5.png-9c9fc5acd204951d9e551452565668d7.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m4uwr"]
-load_path = "res://.godot/imported/slimer-idle6.png-8e016f1579c51cc90eef30efdc3e5e24.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o5sr2"]
-load_path = "res://.godot/imported/slimer-idle7.png-358f40de03a548a1803093ef888a7db7.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_84gbg"]
-load_path = "res://.godot/imported/slimer-idle8.png-951a3cc8f5064c4297ff70f8b6ce5bf6.ctex"
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_kimpj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_rldp6")
+"texture": ExtResource("CompressedTexture2D_rldp6")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_ahq63")
+"texture": ExtResource("CompressedTexture2D_ahq63")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_4h4y0")
+"texture": ExtResource("CompressedTexture2D_4h4y0")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_b58ev")
+"texture": ExtResource("CompressedTexture2D_b58ev")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_ankfk")
+"texture": ExtResource("CompressedTexture2D_ankfk")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_e12yk")
+"texture": ExtResource("CompressedTexture2D_e12yk")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_bhme6")
+"texture": ExtResource("CompressedTexture2D_bhme6")
 }],
 "loop": true,
 "name": &"attack",
@@ -99,22 +67,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_uhx0m")
+"texture": ExtResource("9_o5sr2")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_7uxu4")
+"texture": ExtResource("10_84gbg")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_mdcui")
+"texture": ExtResource("11_7ji7s")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_ikdmk")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_jjup5")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_wfyvu")
+"texture": ExtResource("12_yutl4")
 }],
 "loop": false,
 "name": &"death",
@@ -122,32 +84,79 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_at850")
+"texture": ExtResource("CompressedTexture2D_at850")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_wbf5k")
+"texture": ExtResource("CompressedTexture2D_wbf5k")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_tvrjd")
+"texture": ExtResource("CompressedTexture2D_tvrjd")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_nx7r3")
+"texture": ExtResource("CompressedTexture2D_nx7r3")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_rdhaw")
+"texture": ExtResource("CompressedTexture2D_rdhaw")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_m4uwr")
+"texture": ExtResource("CompressedTexture2D_m4uwr")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_o5sr2")
+"texture": ExtResource("CompressedTexture2D_o5sr2")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_84gbg")
+"texture": ExtResource("CompressedTexture2D_84gbg")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_42isq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hssac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lyvjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_e57hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8apxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7c32u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_kfoio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_t0774")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_mg1p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_xa24f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_31235")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_f4120")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hssac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_42isq")
+}],
+"loop": false,
+"name": &"summon",
+"speed": 20.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_itray"]
@@ -169,7 +178,7 @@ shape = SubResource("CapsuleShape2D_5itsj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_kimpj")
-animation = &"idle"
+animation = &"attack"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 

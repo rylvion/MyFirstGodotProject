@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cad68k6ccl7cv"]
+[gd_scene load_steps=29 format=3 uid="uid://cad68k6ccl7cv"]
 
 [ext_resource type="Script" uid="uid://uhakyah7v5qr" path="res://scripts/enemies/frog.gd" id="1_72bdi"]
 [ext_resource type="Texture2D" uid="uid://hafmap7xn0j2" path="res://assets/Characters/Enemies and NPC/frog/Sprites/jump/frog-jump-1.png" id="2_1snb5"]
@@ -11,6 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://brp7e4p180iv1" path="res://assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-2.png" id="9_a7vrt"]
 [ext_resource type="Texture2D" uid="uid://dur3drv4nk7kp" path="res://assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-3.png" id="10_madb2"]
 [ext_resource type="Texture2D" uid="uid://clqli8364rax0" path="res://assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-4.png" id="11_1nk0a"]
+[ext_resource type="Texture2D" uid="uid://bnbypfkantge4" path="res://sprites/32size/frame_012.png" id="12_q2ob8"]
+[ext_resource type="Texture2D" uid="uid://dep31u7yu31ml" path="res://sprites/32size/frame_004.png" id="13_dmqla"]
+[ext_resource type="Texture2D" uid="uid://dfwii30ge5k46" path="res://sprites/32size/frame_001.png" id="14_f6tul"]
+[ext_resource type="Texture2D" uid="uid://bayapkv1ixgfs" path="res://sprites/32size/frame_002.png" id="15_ovp48"]
+[ext_resource type="Texture2D" uid="uid://ugp64656a21u" path="res://sprites/32size/frame_003.png" id="16_fkman"]
+[ext_resource type="Texture2D" uid="uid://c4hetmy25f81i" path="res://sprites/32size/frame_005.png" id="17_i8fxd"]
+[ext_resource type="Texture2D" uid="uid://buj4pfjwhsofs" path="res://sprites/32size/frame_006.png" id="18_0qwy0"]
+[ext_resource type="Texture2D" uid="uid://c24iv6kruejqp" path="res://sprites/32size/frame_007.png" id="19_tn0ru"]
+[ext_resource type="Texture2D" uid="uid://bwf8565f18f7v" path="res://sprites/32size/frame_008.png" id="20_s7fgc"]
+[ext_resource type="Texture2D" uid="uid://csm66sdn2wyb" path="res://sprites/32size/frame_009.png" id="21_l52ft"]
+[ext_resource type="Texture2D" uid="uid://cl1wdgtvt60b2" path="res://sprites/32size/frame_010.png" id="22_l1jpd"]
+[ext_resource type="Texture2D" uid="uid://0p8mjg24kekk" path="res://sprites/32size/frame_011.png" id="23_jh0i0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aumaf"]
 
@@ -84,6 +96,53 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_q2ob8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dmqla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f6tul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ovp48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fkman")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i8fxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0qwy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tn0ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_s7fgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_l52ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_l1jpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jh0i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dmqla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_q2ob8")
+}],
+"loop": false,
+"name": &"summon",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ia14r"]
@@ -103,7 +162,7 @@ shape = SubResource("CapsuleShape2D_aumaf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_o353j")
-animation = &"idle"
+animation = &"summon"
 
 [node name="PlayerDeath" type="Area2D" parent="."]
 scale = Vector2(0.76721036, 0.7600008)

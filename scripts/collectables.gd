@@ -1,17 +1,13 @@
 extends Node2D
 
 var cherry = preload("res://scenes/collectables/cherry.tscn")
-const MAX_ACTIVE_CHERRIES: int = 50
-const CHERRY_GROUP: StringName = &"cherry_collectable"
+const MAX_ACTIVE_CHERRIES: int = 15
 const DEFAULT_SEGMENTS: Array = [
-	{ "y": 300, "x_min": 0,   "x_max": 276 },
-	{ "y": 300, "x_min": 312, "x_max": 352 },
-	{ "y": 300, "x_min": 568, "x_max": 800 },
-	{ "y": 425, "x_min": 832, "x_max": 1136 },
-	{ "y": 300, "x_min": 1176, "x_max": 2284}
+	{ "y": 298, "x_min": 48, "x_max": 2248 }
 ]
 
 var parent_node: Node2D
+var active_cherries: int = 0
 
 func _ready() -> void:
 	randomize()
@@ -32,17 +28,15 @@ func get_random_position(segments: Array = DEFAULT_SEGMENTS) -> Vector2:
 		
 	return Vector2.ZERO
 
-func _get_active_cherry_count() -> int:
-	var active: int = 0
-	for node in get_tree().get_nodes_in_group(CHERRY_GROUP):
-		if is_instance_valid(node):
-			active += 1
-	return active
-
 func _on_timer_timeout() -> void:
-	if _get_active_cherry_count() >= MAX_ACTIVE_CHERRIES:
+	if active_cherries >= MAX_ACTIVE_CHERRIES:
 		return
 
 	var cherryTemp = cherry.instantiate()
 	cherryTemp.position = get_random_position()
+	cherryTemp.tree_exited.connect(_on_cherry_tree_exited, CONNECT_ONE_SHOT)
 	parent_node.add_child(cherryTemp)
+	active_cherries += 1
+
+func _on_cherry_tree_exited() -> void:
+	active_cherries = max(active_cherries - 1, 0)

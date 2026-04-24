@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://enemy_base_template"]
+[gd_scene load_steps=6 format=3 uid="uid://enemy_base_template"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_base.gd" id="1_base"]
+[ext_resource type="Texture2D" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer-Idle/slimer-idle1.png" id="2_idle"]
+[ext_resource type="Texture2D" path="res://assets/Characters/Enemies and NPC/Slimer/Sprites/Slimer/slimer1.png" id="3_attack"]
+[ext_resource type="Texture2D" path="res://assets/Props Items and VFX/enemy-death 2/Sprites/enemy-death-1.png" id="4_death"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_base"]
 
@@ -13,6 +16,33 @@ radius = 104.307236
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_collision"]
 size = Vector2(33.5, 21)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_enemy_base"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_attack")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_death")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="EnemyBase" type="CharacterBody2D"]
 script = ExtResource("1_base")
 
@@ -20,6 +50,8 @@ script = ExtResource("1_base")
 shape = SubResource("CapsuleShape2D_base")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_enemy_base")
+animation = &"idle"
 
 [node name="PlayerDeath" type="Area2D" parent="."]
 

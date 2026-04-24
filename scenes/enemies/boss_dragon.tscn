@@ -1,0 +1,228 @@
+[gd_scene load_steps=36 format=3 uid="uid://g577ntprp25y"]
+
+[ext_resource type="Script" uid="uid://bkfk3q6pc20ir" path="res://scripts/enemies/boss_dragon.gd" id="1_boss"]
+[ext_resource type="Texture2D" uid="uid://ci3osdwgs0idh" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/idle/_0000_Layer-1.png" id="2_idle"]
+[ext_resource type="Texture2D" uid="uid://6mw87an5f2wa" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/breath/_0000_Layer-1.png" id="3_attack"]
+[ext_resource type="Texture2D" uid="uid://cnyq7miovce3j" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/breath/_0001_Layer-2.png" id="3_wecju"]
+[ext_resource type="Texture2D" uid="uid://b8qnkh73gqgv" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/breath/_0002_Layer-3.png" id="4_8lnnt"]
+[ext_resource type="Texture2D" uid="uid://cbt3ycrmxl50s" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/breath/_0003_Layer-4.png" id="5_c1oxm"]
+[ext_resource type="Texture2D" uid="uid://l7cbbfk2rx25" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/breath/_0004_Layer-5.png" id="6_wx1uv"]
+[ext_resource type="Texture2D" uid="uid://vaktvfha4b6v" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/breath/_0005_Layer-6.png" id="7_myueq"]
+[ext_resource type="Texture2D" uid="uid://cl64lmqv7puxc" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/breath/_0006_Layer-7.png" id="8_a13ag"]
+[ext_resource type="Texture2D" uid="uid://dknm5g0kkkp37" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-1.png" id="9_650y4"]
+[ext_resource type="Texture2D" uid="uid://cqlbidelxu7pr" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-2.png" id="10_1acqk"]
+[ext_resource type="Texture2D" uid="uid://b8vk4ieh6jscq" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-3.png" id="11_4knpt"]
+[ext_resource type="Texture2D" uid="uid://bq3qmjw4m8apd" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-4.png" id="12_letoi"]
+[ext_resource type="Texture2D" uid="uid://bqye4dx0or0qy" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-5.png" id="13_8co7s"]
+[ext_resource type="Texture2D" uid="uid://2nd51npuyht6" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-6.png" id="14_frcud"]
+[ext_resource type="Texture2D" uid="uid://bxspdek28uqpv" path="res://assets/Props Items and VFX/enemy-death/Sprites/enemy-death-7.png" id="15_xwuo1"]
+[ext_resource type="Texture2D" uid="uid://cfpvgdbnu3u0y" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/idle/_0001_Layer-2.png" id="17_8itvg"]
+[ext_resource type="Texture2D" uid="uid://bc6xf2020dfmp" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/idle/_0002_Layer-3.png" id="18_h4cy0"]
+[ext_resource type="Texture2D" uid="uid://buioy17gayweq" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/idle/_0003_Layer-4.png" id="19_40dy3"]
+[ext_resource type="Texture2D" uid="uid://kp0g7blwawwg" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/idle/_0004_Layer-5.png" id="20_b8itq"]
+[ext_resource type="Texture2D" uid="uid://b2qrup5yyyqrs" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/idle/_0005_Layer-6.png" id="21_ul1rt"]
+[ext_resource type="Texture2D" uid="uid://cnuu18nkwpf1q" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/tail/_0000_Layer-1.png" id="22_pokvj"]
+[ext_resource type="Texture2D" uid="uid://k0omx1sln05p" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/tail/_0001_Layer-2.png" id="23_hfuem"]
+[ext_resource type="Texture2D" uid="uid://clm1vw1ftcyvw" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/tail/_0002_Layer-3.png" id="24_6pm8d"]
+[ext_resource type="Texture2D" uid="uid://bney1ckqdtple" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/tail/_0003_Layer-4.png" id="25_i2nuj"]
+[ext_resource type="Texture2D" uid="uid://cckhc5g1mxnrk" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/tail/_0004_Layer-5.png" id="26_si7t7"]
+[ext_resource type="Texture2D" uid="uid://ctdr5stp4g3we" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/tail/_0005_Layer-6.png" id="27_s35n6"]
+[ext_resource type="Texture2D" uid="uid://cs8yd7dvtfe7i" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/tail/_0006_Layer-7.png" id="28_76i2m"]
+[ext_resource type="Texture2D" uid="uid://cr5hiqs6dydrq" path="res://assets/Characters/Enemies and NPC/Grotto-escape-2-boss-dragon/sprites/tail/_0007_Layer-8.png" id="29_6iafr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_boss"]
+radius = 43.966476
+height = 194.06653
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_boss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_650y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1acqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4knpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_letoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8co7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_frcud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xwuo1")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8itvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_h4cy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_40dy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_b8itq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ul1rt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_attack")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wecju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8lnnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c1oxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wx1uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_myueq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a13ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_attack")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wecju")
+}],
+"loop": false,
+"name": &"short_ranged_dragon_breath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_pokvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hfuem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6pm8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_i2nuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_si7t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_s35n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_76i2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_6iafr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hfuem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pokvj")
+}],
+"loop": false,
+"name": &"tail_swoop",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
+radius = 292.64655
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wecju"]
+radius = 47.91697
+height = 176.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_collision"]
+size = Vector2(234.54732, 41.442703)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wecju"]
+size = Vector2(648, 74)
+
+[node name="BossDragon" type="CharacterBody2D"]
+script = ExtResource("1_boss")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(4, 35)
+rotation = -1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_boss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-56, -40)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_boss")
+animation = &"short_ranged_dragon_breath"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+scale = Vector2(1.5542021, 1.6542134)
+
+[node name="detection_radius" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_detect")
+debug_color = Color(1, 0, 0, 0.050980393)
+
+[node name="breath" type="Node2D" parent="."]
+
+[node name="PlayerCollision" type="Area2D" parent="breath"]
+position = Vector2(8, -8)
+
+[node name="dragon_breath" type="CollisionShape2D" parent="breath/PlayerCollision"]
+position = Vector2(-152, 40)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wecju")
+debug_color = Color(0.8156863, 0.38431373, 0, 0.41960785)
+
+[node name="TailSwoop" type="Node2D" parent="."]
+position = Vector2(-7, -42)
+scale = Vector2(-1.8992255, 1.0372301)
+
+[node name="PlayerCollision" type="Area2D" parent="TailSwoop"]
+unique_name_in_owner = true
+position = Vector2(91, 36)
+
+[node name="sweep_the_floor" type="CollisionShape2D" parent="TailSwoop/PlayerCollision"]
+unique_name_in_owner = true
+position = Vector2(-95, 66)
+shape = SubResource("RectangleShape2D_collision")
+debug_color = Color(0.81410164, 0.38590688, 0.00066478195, 0.41960785)
+
+[node name="long_range_fireball" type="Node2D" parent="."]
+
+[node name="PlayerCollision" type="Area2D" parent="long_range_fireball"]
+
+[node name="fireball" type="CollisionShape2D" parent="long_range_fireball/PlayerCollision"]
+position = Vector2(-388, 19)
+shape = SubResource("RectangleShape2D_wecju")
+debug_color = Color(0.9993934, 0, 0.12844995, 0.41960785)
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="breath/PlayerCollision" to="." method="_on_player_collision_body_entered"]
+[connection signal="body_entered" from="TailSwoop/PlayerCollision" to="." method="_on_player_collision_body_entered"]

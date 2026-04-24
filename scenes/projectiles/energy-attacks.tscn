@@ -1,0 +1,145 @@
+[gd_scene load_steps=28 format=3 uid="uid://dcn3nas4mjrre"]
+
+[ext_resource type="Texture2D" uid="uid://dhq4ush7j2pjd" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-field/_0000_Layer-1.png" id="1_wl8oc"]
+[ext_resource type="Texture2D" uid="uid://ylom8vaa61dm" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-field/_0001_Layer-2.png" id="2_v3ogd"]
+[ext_resource type="Texture2D" uid="uid://bidy1hqv8yrpo" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-field/_0002_Layer-3.png" id="3_50vjd"]
+[ext_resource type="Texture2D" uid="uid://btbjl2rpj5af0" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-field/_0003_Layer-4.png" id="4_j154a"]
+[ext_resource type="Texture2D" uid="uid://b6wr3ocmtdjlh" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-field/_0004_Layer-5.png" id="5_yhniq"]
+[ext_resource type="Texture2D" uid="uid://crhunrmlrrf71" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-field/_0005_Layer-6.png" id="6_5fqwm"]
+[ext_resource type="Texture2D" uid="uid://8g0oacph75wo" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-field/_0006_Layer-7.png" id="7_l6mjx"]
+[ext_resource type="Texture2D" uid="uid://08n6fjcudduo" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-field/_0007_Layer-8.png" id="8_v04i4"]
+[ext_resource type="Texture2D" uid="uid://8plw0xfijjyw" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-smack/_0001_Layer-2.png" id="9_x12ho"]
+[ext_resource type="Texture2D" uid="uid://3fcr5bo8l3qq" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-smack/_0004_Layer-5.png" id="10_a40xk"]
+[ext_resource type="Texture2D" uid="uid://bvte21dhwjvas" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-smack/_0003_Layer-4.png" id="11_qd5qm"]
+[ext_resource type="Texture2D" uid="uid://c5wlpiinkvi03" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0000_Layer-1.png" id="12_px3bh"]
+[ext_resource type="Texture2D" uid="uid://dq86khqh2i3u" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0001_Layer-2.png" id="13_usnnq"]
+[ext_resource type="Texture2D" uid="uid://pmh447cjc4mg" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0002_Layer-3.png" id="14_5g3cg"]
+[ext_resource type="Texture2D" uid="uid://002k3mi04mwt" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0003_Layer-4.png" id="15_vsyx3"]
+[ext_resource type="Texture2D" uid="uid://bl1c15enelj05" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0004_Layer-5.png" id="16_dbb5i"]
+[ext_resource type="Texture2D" uid="uid://f6ei00tr7qj6" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0005_Layer-6.png" id="17_pigfo"]
+[ext_resource type="Texture2D" uid="uid://b5qluwvub6yjo" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0006_Layer-7.png" id="18_bidbj"]
+[ext_resource type="Texture2D" uid="uid://btenxohiqiuk0" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0007_Layer-8.png" id="19_locby"]
+[ext_resource type="Texture2D" uid="uid://cl1u64g4v6tmc" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/electro-shock/_0008_Layer-9.png" id="20_ysh0u"]
+[ext_resource type="Texture2D" uid="uid://dkrrpwdhn1k7b" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-smack/_0000_Layer-1.png" id="21_28wxs"]
+[ext_resource type="Texture2D" uid="uid://psc4b6iktl02" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-smack/_0002_Layer-3.png" id="22_hwoml"]
+[ext_resource type="Texture2D" uid="uid://bdlg8xode1o48" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-smack/_0005_Layer-6.png" id="23_80c6j"]
+[ext_resource type="Texture2D" uid="uid://itbqea28xodu" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-smack/_0006_Layer-7.png" id="24_hkm6r"]
+[ext_resource type="Texture2D" uid="uid://brtgvp40lwxh" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/energy-smack/_0007_Layer-8.png" id="25_0velc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmhrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wl8oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v3ogd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_50vjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j154a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yhniq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5fqwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l6mjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v04i4")
+}],
+"loop": true,
+"name": &"energy-field",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_x12ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a40xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qd5qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_px3bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_usnnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5g3cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vsyx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dbb5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pigfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bidbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_locby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ysh0u")
+}],
+"loop": true,
+"name": &"energy-field-explode",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_28wxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x12ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hwoml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qd5qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a40xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_80c6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hkm6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0velc")
+}],
+"loop": true,
+"name": &"energy-smack",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mat4l"]
+size = Vector2(7, 7)
+
+[node name="big_fireball" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -0.99999905)
+scale = Vector2(0.39157987, 0.3774076)
+sprite_frames = SubResource("SpriteFrames_rmhrb")
+animation = &"energy-field"
+frame_progress = 0.9145595
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_mat4l")

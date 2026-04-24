@@ -3,21 +3,21 @@ extends Node2D
 @onready var reset_dialog = $ResetDialog
 
 func _ready():
-	print("[main] Game started")
+	print("Game started")
 	Utils.loadGame()
 
 func _on_quit_pressed() -> void:
-	print("[main] [func _on_quit_pressed] Quiting...")
+	print("quiting...")
+	Utils.saveGame()
 	get_tree().quit()
 
 
 func _on_play_pressed() -> void:
 	set_process_input(false)
-	if Game.playerHP <= 0:
-		Game.deaths += 1
-		Game.playerHP = Game.maxHP
-		Utils.saveGame()
-	print("[main] [func _on_play_pressed] Transitioning to world.tscn")
+	Game.begin_startup_timer()
+	Game.playerHP = Game.maxHP
+	Utils.saveGame()
+	print("loading")
 	get_tree().change_scene_to_file("res://scenes/main/World.tscn")
 
 func _on_reset_button_pressed() -> void:
@@ -25,21 +25,19 @@ func _on_reset_button_pressed() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("quit"):
-		print("[main] Quiting...")
-		get_tree().quit()
+		_on_quit_pressed()	
 	
 	if event.is_action_pressed("ui_accept"):
 		_on_play_pressed()
-	
 
 
 func _on_reset_dialogue_confirmed() -> void:
-	print("[main] Resetting save...")
+	print("resetting save...")
 
 	Game.playerHP = Game.maxHP
 	Game.gold = 0
-	Game.deaths = 0
 	Game.level = 1
+	Game.reset_tutorial_progress()
 
 	Utils.saveGame()
 	

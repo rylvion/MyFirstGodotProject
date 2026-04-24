@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwh4a7ux4o2hp"]
+
+[ext_resource type="Script" uid="uid://bydxbpc355f5l" path="res://scripts/ui_status_bars.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.06, 0.08, 0.12, 0.84)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.14)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_bg"]
+bg_color = Color(0.12, 0.14, 0.18, 0.95)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp_fill"]
+bg_color = Color(0.16, 0.83, 0.42, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gold_fill"]
+bg_color = Color(0.97, 0.82, 0.12, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="StatusBars" type="Control"]
+custom_minimum_size = Vector2(448, 92)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 464.0
+offset_bottom = 108.0
+script = ExtResource("1_script")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="HealthLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 5.0
+offset_right = 100.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.9, 0.98, 0.93, 1)
+text = "Health"
+
+[node name="HealthBar" type="ProgressBar" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 26.0
+offset_right = 436.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bar_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hp_fill")
+show_percentage = false
+
+[node name="HealthValue" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 236.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.9, 0.98, 0.93, 1)
+text = "HP 0/0"
+horizontal_alignment = 0
+
+[node name="LevelValue" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 4.0
+offset_right = 434.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.75, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Lvl 1"
+horizontal_alignment = 2
+
+[node name="GoldLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 52.0
+offset_right = 131.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(1, 0.96, 0.77, 1)
+text = "Level Progress"
+
+[node name="GoldBar" type="ProgressBar" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 78.0
+offset_right = 437.0
+offset_bottom = 92.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bar_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gold_fill")
+show_percentage = false
+
+[node name="GoldValue" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 50.0
+offset_right = 438.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(1, 0.96, 0.77, 1)
+text = "Gold to next level: 0/0 (0%)"
+horizontal_alignment = 2
+    

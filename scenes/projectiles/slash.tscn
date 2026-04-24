@@ -1,0 +1,101 @@
+[gd_scene load_steps=20 format=3 uid="uid://bcwlewys8hrvl"]
+
+[ext_resource type="Texture2D" uid="uid://d10oexljwq7u" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-circular/_0000_Layer-1.png" id="1_7tvu8"]
+[ext_resource type="Script" uid="uid://dlingve2ccniw" path="res://scripts/slash.gd" id="1_slash"]
+[ext_resource type="Texture2D" uid="uid://cncvmguyhscgr" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-circular/_0001_Layer-2.png" id="2_dnymg"]
+[ext_resource type="Texture2D" uid="uid://djmen81sa8yny" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-circular/_0002_Layer-3.png" id="3_fp02h"]
+[ext_resource type="Texture2D" uid="uid://b3dj83l08bsk8" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-circular/_0003_Layer-4.png" id="4_d1ffn"]
+[ext_resource type="Texture2D" uid="uid://1jvuabtct2dt" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-circular/_0004_Layer-5.png" id="5_gtdg1"]
+[ext_resource type="Texture2D" uid="uid://cjq21cpgg53y0" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-circular/_0005_Layer-6.png" id="6_nuhei"]
+[ext_resource type="Texture2D" uid="uid://dwdtxevyr4yum" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-horizontal/_0000_Layer-1.png" id="7_0pnso"]
+[ext_resource type="Texture2D" uid="uid://htfpcrxu7e5u" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-horizontal/_0001_Layer-2.png" id="8_dnah1"]
+[ext_resource type="Texture2D" uid="uid://3lepbp67y6fh" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-horizontal/_0002_Layer-3.png" id="9_hf68h"]
+[ext_resource type="Texture2D" uid="uid://d06g0yc41xh3l" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-horizontal/_0003_Layer-4.png" id="10_yo7xs"]
+[ext_resource type="Texture2D" uid="uid://m1d7k3ya3c8" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-horizontal/_0004_Layer-5.png" id="11_fux51"]
+[ext_resource type="Texture2D" uid="uid://dcqpr728fet1u" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-upward/_0000_Layer-1.png" id="12_d0c27"]
+[ext_resource type="Texture2D" uid="uid://b5t3guyfj620p" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-upward/_0001_Layer-2.png" id="13_ohip6"]
+[ext_resource type="Texture2D" uid="uid://bkmd37c0jv4qp" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-upward/_0002_Layer-3.png" id="14_utsi4"]
+[ext_resource type="Texture2D" uid="uid://d02werwjv0fpp" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-upward/_0003_Layer-4.png" id="15_sr0ta"]
+[ext_resource type="Texture2D" uid="uid://q5pux1i28y36" path="res://assets/Props Items and VFX/Grotto-escape-2-FX/sprites/slash-upward/_0004_Layer-5.png" id="16_5m275"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmhrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7tvu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dnymg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fp02h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d1ffn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gtdg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nuhei")
+}],
+"loop": true,
+"name": &"slash-circular",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0pnso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dnah1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hf68h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yo7xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fux51")
+}],
+"loop": true,
+"name": &"slash-horizontal",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_d0c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ohip6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_utsi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sr0ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5m275")
+}],
+"loop": true,
+"name": &"slash-upward",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mat4l"]
+size = Vector2(185.5, 35.625)
+
+[node name="slash" type="Area2D"]
+script = ExtResource("1_slash")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(2.964332, 2.434676)
+sprite_frames = SubResource("SpriteFrames_rmhrb")
+animation = &"slash-horizontal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.75, 5.1875)
+shape = SubResource("RectangleShape2D_mat4l")

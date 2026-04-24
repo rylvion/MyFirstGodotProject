@@ -1,0 +1,184 @@
+TinyQuest
+
+Created by: abdurahmansharif.uk
+4 devlogs
+26h 49m 33s
+
+1 follower
+Approved
+This will be my first project using godot, so ive been experimenting with the engine and its features to make a 2d game, nodes and all of that, huge props for freecodecamp for making a crash course on godot (https://www.youtube.com/watch?v=S8lMTwS…
+
+🤖 This project uses AI
+I used GitHub Copilot to help write some parts of this godot project, review ideas, suggest features, explain code, debugging, assist with wording and more….
+
+Demo
+Repository
+Readme
+Note: AI coding time is being ignored
+Time spent coding entirely using AI agents like GitHub Copilot is being automatically filtered out of total project time. If you were using AI agents excessively and see discrepancies in your coding time, this is likely why. Please ask the support team in #flavortown-help if you have any questions!
+X
+Add Devlog
+abdurahmansharif.uk
+abdurahmansharif.uk worked on TinyQuest
+1 day ago
+1h 26m logged
+Devlog 4 - ui polish + feedback
+after reading through the feedback from my last release, I’ve started working towards v0.2-alpha, focusing on improving overall game feel, clarity, and performance.
+
+i will now include more devlogging from now on and the following:
+
+optimisation
+ui polish + feedback [✅)
+bosses + more gameplay
+tutorial
+music + sfx
+today i added health bar, damage feedback so itll show like -XX damage so -10 damage (but depends on level) if you get hit, +XX gold if you get gold (from enemies, not cherries), also i updated max cherries to 25 and not infinite for performance. ill also plan on removing unused assets
+
+Thanks again to everyone who tested and gave feedback.
+
+Attachment
+0
+0
+
+Write a comment...
+Post Comment
+abdurahmansharif.uk
+abdurahmansharif.uk worked on TinyQuest
+2 days ago
+0h 34m logged
+Devlog 3 - Windows Export problems
+it took a while but me and my boi github copilot solved this it took an hour and several prompts to find out the problem. im sorry for any technical difficulties that made gameplay close to impossible to play. it was thanks to 1 of the guys that tested this that this have been brought up to me. ive been testing on the godot editor and not the actual exe version. so… 😅 i couldnt of known. but the godot editor seems fine so idk
+
+What is fixed:
+
+solved major rendering failures in exported builds where map textures were missing.
+repaired stale texture reference issues in world/background scene data.
+fixed invisible player in export while movement and collisions still worked.
+fixed slime enemies not rendering in export (frogs were already fine).
+added robust runtime sprite-frame fallbacks for player and slime so broken cached texture hashes no longer break visuals.
+verified gameplay now renders correctly in exported build with no blocking visual issues.
+the game now behaves much closer to the editor version in exported Windows builds.
+exports are more resilient against texture import/cache inconsistencies.
+v0.1.0-alpha is now in a much better state for public testing and release packaging.![alt text](image.png)
+
+Attachment
+Attachment
+
+0
+0
+
+Write a comment...
+Post Comment
+abdurahmansharif.uk
+abdurahmansharif.uk shipped TinyQuest
+4 days ago
+Shipped this project!
+Hours:
+24.81
+Cookies:
+🍪 76
+Multiplier:
+3.08 cookies/hr
+13 votes received
+Voter #13   1185s · Opened Demo, Repo
+
+Originality 3/9 · Technicality 4/9 · Usability 5/9 · Storytelling 3/9
+
+Currently the game is pretty bland, one thing I felt the difficulty didn't scale that well, because you have to actively seek out the enemies, and not them seeking you out and making it harder for you. Nice starting project though! Also would help if stats like HP would have a bar.
+Voter #12   115s · Opened Demo
+
+Originality 4/9 · Technicality 5/9 · Usability 4/9 · Storytelling 5/9
+
+Its a cool and interesting project, although it's not my type it seems very cool
+Voter #11   154s · Opened Demo, Repo
+
+Originality 5/9 · Technicality 4/9 · Usability 4/9 · Storytelling 3/9
+
+Great Creativity has been put behind this project and it is very clear, Maybe add some feature to make the game more than what it is today example a boss
+Voter #10   799s · Opened Demo, Repo
+
+Originality 4/9 · Technicality 4/9 · Usability 5/9 · Storytelling 5/9
+
+it would be nice if there's like unique mele and ranged equiepment with upgradables as meta progression so that it diversify gameplay
+Voter #9   77s · Opened Demo
+
+Originality 6/9 · Technicality 6/9 · Usability 6/9 · Storytelling 4/9
+
+the game idea is good the graphics is good but there is not much devlogs so i can't see the building process of the project
+Voter #8   328s · Opened Demo
+
+Originality 8/9 · Technicality 8/9 · Usability 7/9 · Storytelling 6/9
+
+"The game is amazing! But on my laptop, it was lagging, so I couldn't experience it as it is. Still, I think it’s a good game.
+Voter #7   603s · Opened Demo, Repo
+
+Originality 6/9 · Technicality 5/9 · Usability 5/9 · Storytelling 6/9
+
+Good game the sprites are good .i love those colors that you used.
+Voter #6   303s · Opened Demo, Repo
+
+Originality 6/9 · Technicality 7/9 · Usability 7/9 · Storytelling 5/9
+
+Hi abdurrahman sharif.uk! You've done a nice project, but you were perhaps a little brief in your dev logs.
+Voter #5   1393s · Opened Demo, Repo
+
+Originality 2/9 · Technicality 4/9 · Usability 4/9 · Storytelling 2/9
+
+Cool! Its a bit odd that all of your stats stay when you die. You have all of these cool animations but no sounds. Just simple sfx would go a long way. I hope that wasnt an issue on my end. Devloging could have been a bit more detailed. The first devlog dose not even show your own project! You mention the things you added beyond the tutorial in the readme but not in the devlogs.
+Voter #4   113s · Opened Demo, Repo
+
+Originality 5/9 · Technicality 6/9 · Usability 5/9 · Storytelling 4/9
+
+except the sotry telling everything seems pretty good. also dont log like 20 hrs of work in one devlog spread ti a bit but apart from that great job
+Voter #3   305s · Opened Demo, Repo
+
+Originality 4/9 · Technicality 5/9 · Usability 6/9 · Storytelling 4/9
+
+I think so you could have better devlogged the progress and then the game really looks cool to play.
+Voter #2   403s · Opened Demo
+
+Originality 3/9 · Technicality 4/9 · Usability 5/9 · Storytelling 3/9
+
+I found the game a bit confusing to play. I think it would benefit greatly from a small tutorial and some sound effect!
+Voter #1   508s · Opened Demo
+
+Originality 7/9 · Technicality 6/9 · Usability 6/9 · Storytelling 3/9
+
+Watch out for those devlogs! you should do more! The game is fun, i would add sfx and auto leveling In itself more polish obviously but for your first project it is very good!
+I built TinyQuest, a small 2D action‑platformer where you fight waves of enemies, collect gold, and level up to survive longer each run. The hardest part was designing a core loop that actually felt fun - balancing waves, scaling enemies, and progression took a lot of iteration. I’m really proud of getting a full playable build exported and shipped for the first time. It finally feels like a real game instead of just a tutorial project.
+
+abdurahmansharif.uk
+abdurahmansharif.uk worked on TinyQuest
+4 days ago
+3h 22m logged
+Devlog #2 – First Playable Build Released [Alpha v0.1.0]
+I spent this session turning TinyQuest into an actual game instead of a science experiment. I added the full wave system, complete with scaling enemies and a proper survival loop. The leveling system is now fully functional too, gold drops, HP upgrades, cooldown scaling, and all the juicy progression bits that make the game replayable. I packaged everything into a clean build and shipped the first playable release (v0.1.0‑alpha). It finally feels like a real loop: fight → collect → level → survive → repeat.
+
+Attachment
+0
+0
+
+Write a comment...
+Post Comment
+abdurahmansharif.uk
+abdurahmansharif.uk worked on TinyQuest
+3 months ago
+21h 26m logged
+Devlog #1 - Godot Engine Initiation
+I pushed my first project up at github.com/rylvion/MyFirstGodotProject and dove straight into Godot. Following the fundamentals from this tutorial:
+➡️ Godot 4 2D Platformer - https://www.youtube.com/watch?v=S8lMTwSRoRg
+
+Spent time breaking down the engine mechanics and mastering the essentials:
+
+Installed and configured Godot from scratch
+Learned core GDScript concepts and syntax
+Built and connected signals / connectors
+Explored 2D physics and movement systems
+Worked with normalisation and vector control
+Studied scene structure, nodes, and workflow patterns
+Attachment
+0
+0
+
+Write a comment...
+Post Comment

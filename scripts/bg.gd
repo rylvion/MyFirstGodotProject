@@ -55,6 +55,20 @@ func scroll_layer(layer: Parallax2D, speed: float, repeat: float, delta: float) 
 		return
 	layer.scroll_offset.x = fposmod(layer.scroll_offset.x - speed * delta, period)
 
+func fposmod(value: float, modulus: float) -> float:
+	var result := fmod(value, modulus)
+	return result + modulus if result < 0.0 else result
+
+func _on_viewport_size_changed() -> void:
+	var viewport_width := get_viewport_rect().size.x
+	_ensure_repeat(sky_layer, sky_repeat_hint, viewport_width)
+	_ensure_repeat(mountains_layer, mountains_repeat_hint, viewport_width)
+	_ensure_repeat(houses_layer, houses_repeat_hint, viewport_width)
+
+func _on_visibility_changed() -> void:
+	if is_visible_in_tree():
+		_on_viewport_size_changed()
+
 func _process(delta: float) -> void:
 	scroll_layer(sky_layer, sky_speed, sky_repeat_hint, delta)
 	scroll_layer(mountains_layer, mountains_speed, mountains_repeat_hint, delta)

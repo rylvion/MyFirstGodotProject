@@ -14,10 +14,8 @@ func _on_level_changed(_new_level: int) -> void:
 	text = "+1 Level for $%d" % cost
 
 func _on_pressed() -> void:
-	if Game.gold >= cost:
-		Game.gold -= cost
-		Game.level += 1
-		
+	if Game.try_level_up():
+		Utils.saveGame()
 		cost = Game.get_hp_upgrade_cost(Game.level)
 		text = "+1 Level for $%d" % cost
 	else:
