@@ -27,10 +27,14 @@ func saveGame() -> void:
 		return
 
 	var data: Dictionary = {
+		"game_version": Game.GAME_VERSION,
+		"save_schema": Game.SAVE_SCHEMA_VERSION,
 		"playerHP": Game.playerHP,
 		"gold": Game.gold,
 		"level": Game.level,
 		"maxHP": Game.maxHP,
+		"wins": Game.wins,
+		"last_victory_wave": Game.last_victory_wave,
 		"tutorial_progress": Game.get_tutorial_progress_data(),
 		"tutorial_attack_done": Game.tutorial_attack_done,
 		"tutorial_stomp_done": Game.tutorial_stomp_done,
@@ -65,6 +69,8 @@ func loadGame() -> void:
 	Game.level = loaded_level
 	Game.gold = float(data.get("gold", 0.0))
 	Game.playerHP = int(data.get("playerHP", Game.maxHP))
+	Game.wins = max(int(data.get("wins", 0)), 0)
+	Game.last_victory_wave = max(int(data.get("last_victory_wave", 0)), 0)
 	if typeof(data.get("tutorial_progress", null)) == TYPE_DICTIONARY:
 		Game.load_tutorial_progress(data.get("tutorial_progress", {}))
 	else:

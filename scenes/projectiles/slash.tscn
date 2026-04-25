@@ -39,9 +39,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_nuhei")
 }],
-"loop": true,
+"loop": false,
 "name": &"slash-circular",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -59,7 +59,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_fux51")
 }],
-"loop": true,
+"loop": false,
 "name": &"slash-horizontal",
 "speed": 20.0
 }, {
@@ -81,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"slash-upward",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mat4l"]
@@ -95,6 +95,8 @@ position = Vector2(0, 1)
 scale = Vector2(2.964332, 2.434676)
 sprite_frames = SubResource("SpriteFrames_rmhrb")
 animation = &"slash-horizontal"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.75, 5.1875)

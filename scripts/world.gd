@@ -11,6 +11,7 @@ var _victory_shown: bool = false
 
 
 func _ready() -> void:
+	print("Tiny Quest ", Game.GAME_VERSION)
 	quit_dialog.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	if quit_dialog.confirmed.is_connected(_on_quit_dialog_confirmed) == false:
 		quit_dialog.confirmed.connect(_on_quit_dialog_confirmed)
@@ -174,14 +175,20 @@ func _on_wave_completed(completed_wave: int) -> void:
 	if spawner == null:
 		return
 
+	var healed_hp: int = Game.apply_wave_completion_heal(completed_wave)
+	if healed_hp > 0:
+		var heal_label: String = "Boss clear heal +%d HP" if completed_wave % 10 == 0 else "Wave clear heal +%d HP"
+		_show_command_feedback(heal_label % healed_hp)
+
 	var max_wave: int = int(spawner.get_stats().get("max_wave", 30))
 	if completed_wave < max_wave:
 		return
 
 	_victory_shown = true
+	Game.record_victory(completed_wave)
 	Game.input_blocked = true
 	get_tree().paused = true
-	victory_dialog.dialog_text = "You beat the game by clearing Wave %d!" % completed_wave
+	victory_dialog.dialog_text = "You beat the game by clearing Wave %d! Total wins: %d" % [completed_wave, Game.wins]
 	victory_dialog.popup_centered()
 
 

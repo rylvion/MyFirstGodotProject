@@ -1,12 +1,18 @@
 extends Node
 
+const GAME_VERSION: String = "v.0.10-alpha"
+const SAVE_SCHEMA_VERSION: int = 2
 const MAX_LEVEL: int = 100
 const MAX_GOLD: float = 10000.0
+const HEAL_PER_WAVE: int = 10
+const HEAL_PER_BOSS_WAVE: int = 25
+const LIFESTEAL_PER_KILL: int = 1
 
 signal level_changed(new_level: int)
 signal hp_changed(new_hp: int)
 signal max_hp_changed(new_max_hp: int)
 signal gold_changed(new_gold: float)
+signal wins_changed(total_wins: int)
 signal tutorial_progress_changed
 signal input_blocked_changed(is_blocked: bool)
 
@@ -14,6 +20,8 @@ var _max_hp: int = 10
 var _player_hp: int = 10
 var _gold: float = 0.0
 var _level: int = 1
+var _wins: int = 0
+var _last_victory_wave: int = 0
 var _startup_begin_msec: int = -1
 var _input_blocked: bool = false
 
@@ -113,6 +121,25 @@ var level: int:
 		level_changed.emit(_level)
 
 
+var wins: int:
+	get:
+		return _wins
+	set(value):
+		var safe_value: int = max(value, 0)
+		if safe_value == _wins:
+			return
+
+		_wins = safe_value
+		wins_changed.emit(_wins)
+
+
+var last_victory_wave: int:
+	get:
+		return _last_victory_wave
+	set(value):
+		_last_victory_wave = max(value, 0)
+
+
 var input_blocked: bool:
 	get:
 		return _input_blocked
@@ -147,6 +174,33 @@ func consume_startup_timer_msec() -> int:
 	var elapsed: int = Time.get_ticks_msec() - _startup_begin_msec
 	_startup_begin_msec = -1
 	return elapsed
+
+
+func apply_wave_completion_heal(completed_wave: int) -> int:
+	if completed_wave <= 0:
+		return 0
+
+	var heal_amount: int = HEAL_PER_BOSS_WAVE if completed_wave % 10 == 0 else HEAL_PER_WAVE
+	if heal_amount <= 0:
+		return 0
+
+	var before_hp: int = playerHP
+	playerHP = min(maxHP, before_hp + heal_amount)
+	return max(playerHP - before_hp, 0)
+
+
+func apply_kill_lifesteal() -> int:
+	if LIFESTEAL_PER_KILL <= 0:
+		return 0
+
+	var before_hp: int = playerHP
+	playerHP = min(maxHP, before_hp + LIFESTEAL_PER_KILL)
+	return max(playerHP - before_hp, 0)
+
+
+func record_victory(completed_wave: int) -> void:
+	wins += 1
+	last_victory_wave = max(completed_wave, 0)
 
 
 func mark_tutorial_step(step: StringName) -> void:

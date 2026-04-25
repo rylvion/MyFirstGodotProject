@@ -288,6 +288,7 @@ func _die(gold_reward: bool = false) -> void:
 
 	if gold_amount > 0:
 		Game.gold += gold_amount
+		Game.apply_kill_lifesteal()
 
 	defeated.emit(gold_amount, self)
 	set_physics_process(false)
