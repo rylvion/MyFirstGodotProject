@@ -40,6 +40,11 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		var key_event: InputEventKey = event as InputEventKey
 		if key_event.pressed and not key_event.echo:
+			if panel_root != null and panel_root.visible and key_event.ctrl_pressed and key_event.shift_pressed and key_event.physical_keycode == KEY_DELETE:
+				Utils.reset_everyone_progress()
+				set_menu_open(false)
+				get_viewport().set_input_as_handled()
+				return
 			var toggle_pressed: bool = key_event.physical_keycode == toggle_keycode
 			if not toggle_pressed and InputMap.has_action("toggle_settings"):
 				toggle_pressed = event.is_action_pressed("toggle_settings")

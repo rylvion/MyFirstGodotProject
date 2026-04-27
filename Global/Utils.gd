@@ -32,6 +32,17 @@ func get_autosave_delay_seconds() -> float:
 	return _autosave_delay_seconds
 
 
+func reset_everyone_progress() -> void:
+	Game.playerHP = Game.maxHP
+	Game.gold = 0.0
+	Game.level = 1
+	Game.wins = 0
+	Game.last_victory_wave = 0
+	Game.reset_tutorial_progress()
+	SettingsManager.reset_to_defaults()
+	saveGame()
+
+
 func saveGame() -> void:
 	if _autosave_timer != null and not _autosave_timer.is_stopped():
 		_autosave_timer.stop()

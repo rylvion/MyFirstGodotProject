@@ -1,6 +1,6 @@
 extends Node
 
-const GAME_VERSION: String = "v.0.10-alpha"
+const GAME_VERSION: String = "v0.2.0-alpha"
 const SAVE_SCHEMA_VERSION: int = 2
 const MAX_LEVEL: int = 100
 const MAX_GOLD: float = 10000.0

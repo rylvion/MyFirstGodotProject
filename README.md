@@ -1,8 +1,10 @@
+![A title with fancy font containing the text "TinyQuest"](ui/title/tiny-quest-title.png)
+
 # Tiny Quest
 
 Tiny Quest is a 2D wave-survival action game built in Godot 4. You clear enemy waves, collect gold, scale your stats, and push through elite and boss milestones.
 
-Current in-project version: v0.10-alpha
+Current in-project version: v0.2.0-alpha
 
 ## Play
 
