@@ -9,7 +9,7 @@ Current in-project version: v0.2.0-alpha
 ## Play
 
 Windows build:
-https://github.com/rylvion/MyFirstGodotProject/releases/
+https://github.com/rylvion/MyFirstGodotProject/releases/tag/v0.2.0
 
 ## Tech Stack
 
