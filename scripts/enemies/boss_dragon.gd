@@ -44,6 +44,8 @@ const LEGACY_BREATH_ATTACK_ANIMATION: StringName = &"attack"
 const FIREBALL_ATTACK_LABEL: String = "Fireball"
 const TAIL_ATTACK_LABEL: String = "Tail Swoop"
 const SUMMON_ATTACK_LABEL: String = "Summon"
+const GROWL_INTERVAL_MIN: float = 2.8
+const GROWL_INTERVAL_MAX: float = 4.2
 const LEFT_BODY_POSITION: Vector2 = Vector2(4.0, 35.0)
 const RIGHT_BODY_POSITION: Vector2 = Vector2(-136.0, 35.0)
 const LEFT_BREATH_POSITION: Vector2 = Vector2(-152.0, 40.0)
@@ -114,6 +116,7 @@ var tail_hitbox_live: bool = false
 var summon_spawn_count: int = 0
 var spawner_ref: EnemySpawner = null
 var hitstop_active: bool = false
+var intimidation_sfx_timer: float = 0.0
 var default_collision_layer: int = 0
 var default_collision_mask: int = 0
 var breath_animation_name: StringName = BREATH_ATTACK_ANIMATION
@@ -158,6 +161,7 @@ func _ready() -> void:
 	_apply_manual_facing_offsets()
 	_sync_hitboxes_to_facing()
 	fireball_cooldown_timer = _roll_fireball_cooldown() * 0.55
+	intimidation_sfx_timer = randf_range(GROWL_INTERVAL_MIN, GROWL_INTERVAL_MAX)
 	health_changed.emit(current_hits, max_hits)
 	_set_summon_visible(false)
 	_clear_attack_hitboxes()
@@ -176,6 +180,7 @@ func activate_for_wave(wave_number: int) -> void:
 	queued_attack = QueuedAttack.NONE
 	windup_stage = WindupStage.INTENT
 	summon_stage = SummonStage.INTENT
+	intimidation_sfx_timer = randf_range(1.8, 3.2)
 	current_attack_name = ""
 	current_recovery_duration = 0.0
 	hit_cooldown_timer = 0.0
@@ -226,7 +231,9 @@ func activate_for_wave(wave_number: int) -> void:
 			sprite.sprite_frames.set_animation_loop(&"tail_swoop", false)
 		_play_animation(&"idle")
 
+	SoundManager.play_music(&"boss_soundtrack", 5.0)
 	health_changed.emit(current_hits, max_hits)
+	SoundManager.play_sfx(&"roar", -10.0, 1.0, false)
 
 
 func deactivate_for_wave() -> void:
@@ -270,6 +277,7 @@ func _physics_process(delta: float) -> void:
 	hit_cooldown_timer = maxf(hit_cooldown_timer - delta, 0.0)
 	fireball_cooldown_timer = maxf(fireball_cooldown_timer - delta, 0.0)
 	neutral_gap_timer = maxf(neutral_gap_timer - delta, 0.0)
+	_process_intimidation_sfx(delta)
 
 	if player != null and not is_instance_valid(player):
 		player = null
@@ -535,6 +543,7 @@ func _run_summon_state(delta: float) -> void:
 		SummonStage.INTENT:
 			summon_stage = SummonStage.TELEGRAPH
 			state_timer = SUMMON_TELEGRAPH_DURATION
+			SoundManager.play_sfx(&"roar", -4.5)
 			attack_used.emit(SUMMON_ATTACK_LABEL)
 			_set_summon_visible(true)
 			_show_summon_feedback()
@@ -581,6 +590,7 @@ func _begin_attack_telegraph() -> void:
 
 	match queued_attack:
 		QueuedAttack.FIREBALL:
+			SoundManager.play_sfx(&"growl", 60.0, 1.0, false)
 			_play_animation(breath_animation_name)
 		QueuedAttack.TAIL_SWOOP:
 			if sprite != null and sprite.sprite_frames != null and sprite.sprite_frames.has_animation(&"tail_swoop"):
@@ -735,10 +745,16 @@ func take_hit(hit_source: StringName, gold_reward_on_defeat: bool = true) -> boo
 
 
 func _update_phase_flags() -> void:
+	var phase_changed: bool = false
 	if not phase_two_active and current_hits > 0 and current_hits <= int(ceil(float(max_hits) * 0.65)):
 		phase_two_active = true
+		phase_changed = true
 	if not phase_three_active and current_hits > 0 and current_hits <= int(ceil(float(max_hits) * 0.30)):
 		phase_three_active = true
+		phase_changed = true
+
+	if phase_changed:
+		SoundManager.play_sfx(&"roar", -4.0, 1.0, false)
 
 
 func _handle_player_collision() -> void:
@@ -835,6 +851,7 @@ func _die(gold_reward: bool = false) -> void:
 	print("boss died gold reward: ", gold_reward)
 	death = true
 	chase = false
+	SoundManager.play_sfx(&"enemy_explode", -1.5)
 	var gold_amount: int = GOLD if gold_reward else 0
 	if gold_amount > 0:
 		Game.gold += gold_amount
@@ -864,6 +881,20 @@ func _die(gold_reward: bool = false) -> void:
 		sprite.play(&"death")
 		await sprite.animation_finished
 	deactivate_for_wave()
+
+
+func _process_intimidation_sfx(delta: float) -> void:
+	if death or state != BossState.CHASE:
+		return
+	if not chase or player == null or not is_instance_valid(player):
+		return
+
+	intimidation_sfx_timer = maxf(intimidation_sfx_timer - delta, 0.0)
+	if intimidation_sfx_timer > 0.0:
+		return
+
+	SoundManager.play_sfx(&"growl", -3.5, 1.0, false)
+	intimidation_sfx_timer = randf_range(GROWL_INTERVAL_MIN, GROWL_INTERVAL_MAX)
 
 
 func _spawn_boss_gem_burst(total_gold: int) -> void:

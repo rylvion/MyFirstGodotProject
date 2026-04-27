@@ -1,0 +1,88 @@
+PIXABAY LICENSE (THIRD-PARTY ASSETS)
+
+All music and sound effects (SFX) in this project are sourced from Pixabay (https://pixabay.com/service/license-summary/) and are used under the Pixabay License.
+
+The Pixabay License allows free use of content in personal and commercial projects. Attribution is not required, but credit is provided to the original creators for transparency.
+
+These assets are used as part of a larger game project and are not redistributed as standalone files.
+
+All audio files have been converted to .ogg format for performance reasons. Some files may have been trimmed or looped for gameplay purposes. Original sources remain credited below.
+
+Only in `/audio/` directory `.import` files are tracked in Git, which reference the local audio files. The actual audio files are not tracked and are only included in the final build of the game.
+
+------------------------------------------------------------
+MUSIC
+------------------------------------------------------------
+
+Anime Inspiring Music – Bijaybro
+https://pixabay.com/music/main-title-anime-inspiring-music-389687/
+Used in: Main menu
+
+Epic Orchestra Anime Intro – Sekuora
+https://pixabay.com/music/upbeat-epic-orchestra-anime-intro-242461/
+Used in: World loop
+
+Final Battle II – Nyxaurora
+https://pixabay.com/music/main-title-final-battle-ii-epic-cinematic-battle-music-with-intense-orchestral-361155/
+Used in: Boss fights
+
+------------------------------------------------------------
+SFX
+------------------------------------------------------------
+
+Slime Squish – Floraphonic
+https://pixabay.com/sound-effects/film-special-effects-slime-squish-5-218569/
+Used when slime moves or detects player
+
+Collect Points – Liecio
+https://pixabay.com/sound-effects/film-special-effects-collect-points-190037/
+Used when collecting items (gems/cherries)
+
+Frog Croaking – Dragon Studio
+https://pixabay.com/sound-effects/film-special-effects-frog-croaking-sound-effect-322956/
+Used when frog enemy moves or detects player
+
+Retro Explode – Driken5482
+https://pixabay.com/sound-effects/film-special-effects-retro-explode-1-236678/
+Used when an enemy is defeated
+
+Sword Slash – 49053354
+https://pixabay.com/sound-effects/film-special-effects-sword-slash-315218/
+Used for player attack
+
+Sword Clash Hit – Dragon Studio
+https://pixabay.com/sound-effects/film-special-effects-sword-clashhit-393837/
+Used when attacks hit enemies
+
+Epic Dragon Roar – Dragon Studio
+https://pixabay.com/sound-effects/film-special-effects-epic-dragon-roar-364481/
+Used when boss is nearby
+
+Fireball Whoosh – Floraphonic
+https://pixabay.com/sound-effects/film-special-effects-fireball-whoosh-1-179125/
+Used for fireball attack
+
+Victory Chime – Scratchonix
+https://pixabay.com/sound-effects/film-special-effects-victory-chime-366449/
+Used for level/boss victory
+
+Super Deep Growl – Freesound Community
+https://pixabay.com/sound-effects/film-special-effects-super-deep-growl-86749/
+Used for boss idle sound
+
+8-bit Game Over Sound – Lesiakower
+https://pixabay.com/sound-effects/film-special-effects-8-bit-game-over-sound-effect-331435/
+Used on player death / game over
+
+------------------------------------------------------------
+NOTES
+------------------------------------------------------------
+
+- Audio files are stored locally under:
+  res://audio/music/
+  res://audio/SFX/
+
+- These files are not tracked in Git and are only included in the final build.
+
+- See Pixabay License for full details:
+  https://pixabay.com/service/license-summary/

@@ -14,6 +14,9 @@ const OUT_OF_BOUNDS_KILL_Y: float = 1200.0
 @export var patrol_radius: float = 120.0
 @export var patrol_pause_time: float = 0.2
 @export var patrol_speed_multiplier: float = 0.72
+@export var movement_sfx_key: StringName = &""
+@export var movement_sfx_cooldown: float = 0.6
+@export var movement_sfx_volume_db: float = -4.5
 
 var base_speed: float = 0.0
 var base_damage: float = 0.0
@@ -32,6 +35,7 @@ var patrol_origin_x: float = 0.0
 var patrol_direction: float = 1.0
 var patrol_pause_timer: float = 0.0
 var spawn_intro_enabled: bool = false
+var movement_sfx_timer: float = 0.0
 
 @onready var sprite: AnimatedSprite2D = get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
 @onready var body_collision: CollisionShape2D = get_node_or_null("CollisionShape2D") as CollisionShape2D
@@ -118,6 +122,7 @@ func _physics_process(delta: float) -> void:
 		_update_chase_movement()
 	else:
 		_update_patrol_movement(delta)
+	_process_movement_sfx(delta)
 
 	move_and_slide()
 	if not chase and is_on_wall():
@@ -250,6 +255,20 @@ func _begin_patrol_pause(next_direction: float) -> void:
 	_play_animation(&"idle")
 
 
+func _process_movement_sfx(delta: float) -> void:
+	if movement_sfx_key == &"":
+		return
+
+	movement_sfx_timer = maxf(movement_sfx_timer - delta, 0.0)
+	if movement_sfx_timer > 0.0:
+		return
+	if absf(velocity.x) <= 6.0:
+		return
+
+	SoundManager.play_sfx(movement_sfx_key, movement_sfx_volume_db)
+	movement_sfx_timer = maxf(movement_sfx_cooldown, 0.1)
+
+
 func _on_player_detection_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		player = body
@@ -284,6 +303,7 @@ func _die(gold_reward: bool = false) -> void:
 
 	death = true
 	chase = false
+	SoundManager.play_sfx(&"enemy_explode", -2.5)
 	var gold_amount := GOLD if gold_reward else 0
 
 	if gold_amount > 0:

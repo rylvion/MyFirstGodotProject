@@ -33,6 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 		is_collected = true
 		if idle_float_tween != null:
 			idle_float_tween.kill()
+		SoundManager.play_sfx(&"pickup_collectable", -4.0)
 		Game.gold += pickup_gold
 		Game.mark_tutorial_step(&"pickup_gold")
 		$AnimatedSprite2D.play("feedback") # feedback should run 4 frames at 5 frames per second which is equivalent to 0.8 second

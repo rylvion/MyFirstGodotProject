@@ -174,6 +174,7 @@ func _spawn_boss_wave(sequence_id: int) -> void:
 		active_enemies.append(scene_boss)
 
 	current_wave_spawned = 1
+	SoundManager.play_music(&"boss_soundtrack", -5.0)
 	enemy_spawned.emit(scene_boss, active_enemies.size(), current_wave_spawned)
 	boss_spawned.emit(scene_boss)
 	boss_health_changed.emit(scene_boss.get_hits_remaining(), scene_boss.get_max_hits())
@@ -361,6 +362,7 @@ func _on_enemy_defeated(gold_amount: int, enemy: EnemyBase) -> void:
 	if enemy == current_boss:
 		var defeated_boss: BossDragon = enemy as BossDragon
 		print("boss defeated on wave ", wave_number)
+		SoundManager.play_sfx(&"victory", -3.0)
 		boss_state_changed.emit(current_boss_name, 0, defeated_boss.get_max_hits())
 		current_boss = null
 		current_boss_name = ""
@@ -566,6 +568,9 @@ func _finish_boss_wave_after_boss_death(defeated_boss: BossDragon = null) -> voi
 	wave_state_changed.emit(current_wave_defeated, enemies_to_spawn, active_enemies.size())
 	boss_health_changed.emit(0, 0)
 	boss_state_changed.emit("", 0, 0)
+	SoundManager.fade_out_music(1.25)
+	await get_tree().create_timer(1.3).timeout
+	SoundManager.play_music(&"world_loop", -7.0)
 	print("boss wave cleaned up, moving to next wave")
 	if is_waiting_for_next_wave:
 		return

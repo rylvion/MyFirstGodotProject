@@ -56,7 +56,11 @@ func _try_damage_target(target: Node) -> void:
 	if target.has_method("take_hit") == false:
 		return
 
-	target.call("take_hit", &"slash", true)
+	var did_hit: bool = bool(target.call("take_hit", &"slash", true))
+	if did_hit == false:
+		return
+
+	SoundManager.play_sfx(&"slash_hit", -3.5)
 	hit_targets.append(target)
 
 	if hit_targets.size() >= MAX_PIERCE_TARGETS:

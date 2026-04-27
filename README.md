@@ -1,142 +1,200 @@
 # Tiny Quest
 
-Tiny Quest is a small Godot 4 2D survival-action game where you fight waves, collect gold, level up, and survive long enough to deal with elite waves and boss fights.
+Tiny Quest is a 2D wave-survival action game built in Godot 4. You clear enemy waves, collect gold, scale your stats, and push through elite and boss milestones.
 
-It started from a tutorial base and has been expanded with wave progression, scaling, boss encounters, pooling, HUD systems, and save/load support.
+Current in-project version: v0.10-alpha
 
 ## Play
 
-Windows build: https://github.com/rylvion/MyFirstGodotProject/releases/
+Windows build:
+https://github.com/rylvion/MyFirstGodotProject/releases/
+
+## Tech Stack
+
+- Engine: Godot 4.5
+- Renderer: Mobile
+- Save schema: 2
+- Scene entry point: res://scenes/main/main.tscn
 
 ## Core Loop
 
-- Survive waves of slimes and frogs.
-- Collect gold from enemies and cherries.
-- Spend gold to level up and increase your max HP.
-- Use stomps and fireballs to stay alive as waves get harder.
-- Fight a boss every 10 waves.
+- Clear wave encounters of slimes and frogs.
+- Collect gold from kills and pickups.
+- Buy level-ups to increase max HP and survivability.
+- Use saber slashes, fireballs, and stomp kills to control pressure.
+- Handle elite waves every 5 waves and boss waves every 10 waves (starting at wave 10).
+- Finish at wave 30 to trigger run victory.
 
 ## Controls
 
-- Move: `A/D` or Left/Right Arrow
-- Jump / Climb Up: `W`, Up Arrow, or `Space`
-- Climb Down: `S` or Down Arrow
-- Fireball: `X`, `F`, or `Enter`
-- Quick Level-Up: `R`
-- Quit: `Esc`
+- Move: A / D
+- Jump: W
+- Crouch / Fast-fall: S
+- Fireball: F
+- Saber Slash: Left Mouse Button
+- Quick Level-Up: R
+- Settings: M
+- Back / Quit: Esc
+- Command Bar: F1 or Backquote
 
-After wave 5, pressing `Esc` opens a confirmation dialog before leaving the run.
+Notes:
+- After wave 5, Esc opens a confirmation dialog before exiting to menu.
+- Command bar supports: wave <n>, boss, gold <n>, level <n>, heal, clear, help.
 
-## Current Features
+## Current Systems
 
-- Wave-based spawning with delays and wave banners
-- Grounded enemy AI with patrol + chase behavior
-- Fireball combat with pooled projectiles
-- Stomp kills with bounce-back feedback
-- Gold and cherry collectables
-- Level-up button and hotkey
-- Save/load persistence
-- Boss header UI with boss health bar
-- Elite waves and boss waves
-- Tutorial hint flow for first-time actions
+- Wave spawner with telegraphed spawn markers.
+- Normal, elite, and boss wave states with dedicated UI feedback.
+- Boss header with name, HP bar, and attack callouts.
+- Fireball pooling to avoid runtime spawn churn.
+- Saber slash spawn container and single-active-slash guard.
+- Burn stack support on player side (with HUD feedback hooks).
+- Tutorial hint progression tracked in save data.
+- Input block state used for UI/modal safety.
+- Startup time capture and display hooks.
 
-## Enemies
+## Settings Menu
+
+The settings panel is available from:
+- Main menu "Settings" button
+- In-game via M key
+
+Current settings include:
+- Auto Levelling (default ON)
+- Disable Tutorial
+- Master Volume
+- Sound Scale
+- Music Volume
+- SFX Volume
+- Auto-save Interval
+- Key Rebinding (move, jump, fireball, level-up, settings toggle, quit)
+- Save Now
+- Reset Defaults
+- Reset Progress (with danger-styled confirmation)
+
+Behavior notes:
+- Opening settings pauses gameplay simulation.
+- Music and currently playing SFX keep running while settings is open.
+- New SFX requests are blocked while paused.
+- Background menu parallax still animates while settings is open.
+
+## Enemy Roster
 
 ### Slime
 
-- Base Speed: `50`
-- Base Damage: `3`
-- Base Gold: `5`
-- Behavior: patrols, then chases on detection
+- Base speed: 50
+- Base damage: 3
+- Base gold: 5
 
 ### Frog
 
-- Base Speed: `80`
-- Base Damage: `5`
-- Base Gold: `10`
-- Behavior: faster patrol/chase pressure than slime
+- Base speed: 80
+- Base damage: 5
+- Base gold: 10
 
 ### Boss Dragon
 
-- Appears every `10` waves
-- Multi-hit enemy with boss HP UI
-- Grounded heavyweight movement
-- Leap-slam attack with ground impact stun
-- Summons elite support enemies at low HP
-- Variants:
-  - Wave 10: `Dragon`
-  - Wave 20: `Corrupted Dragon`
-  - Wave 30+: `Corrupted Elite Dragon`
+- Spawns on boss waves (10, 20, 30).
+- Uses multi-phase behavior with attack state machine.
+- Summons support packs at phase thresholds.
+- Variants by boss index:
+  - Wave 10: Dragon
+  - Wave 20: Corrupted Dragon
+  - Wave 30: Corrupted Elite Dragon
 
-## Scaling
+## Scaling Reference
 
 ### Player progression
 
-- Max HP:
-  - `max_hp(level) = round(10 + 2*(level-1) + 0.05*(level-1)^2)`
-- HP upgrade cost:
-  - `cost(level) = round(10 + 4*(level-1) + 0.25*(level-1)^2)`
-- New runs always start with HP restored to max.
+- Max HP formula:
+  - max_hp(level) = round(10 + 2*(level-1) + 0.05*(level-1)^2)
+- Level-up cost formula:
+  - cost(level) = round(10 + 4*(level-1) + 0.25*(level-1)^2)
+- Fireball cooldown:
+  - cooldown(level) = max(0.25, 3.0 / (1.0 + 0.12*(level-1)))
 
-### Fireball cooldown
+### Sustain rules
 
-- `cooldown(level) = max(0.25, 3.0 / (1.0 + 0.12*(level-1)))`
+- Lifesteal on kill: +1 HP
+- Wave clear heal: +10 HP
+- Boss wave clear heal: +25 HP
 
 ### Normal wave scaling
 
 - Enemies per wave:
-  - `min(4 + floor((wave - 1) * 1.0), 18, available_spawn_slots)`
+  - min(4 + floor((wave-1) * 1.0), 18, available_spawn_slots)
 - Frog chance:
-  - `clamp(0.30 + 0.035*(wave - 1), 0.30, 0.65)`
+  - clamp(0.30 + 0.035*(wave-1), 0.30, 0.65)
 - Enemy speed scale:
-  - `1.0 + min(0.06*(wave - 1), 1.10)`
+  - 1.0 + min(0.06*(wave-1), 1.10)
 - Enemy damage scale:
-  - `1.0 + min(0.08*(wave - 1), 2.00)`
+  - 1.0 + min(0.08*(wave-1), 2.00)
 - Enemy gold scale:
-  - `1.0 + 0.05*(wave - 1)`
+  - 1.0 + 0.05*(wave-1)
 
-### Elite waves
+### Elite multipliers
 
-Every 5th non-boss wave is elite.
-
-- Speed: `x1.15`
-- Damage: `x1.35`
-- Gold: `x1.75`
+- Speed x1.15
+- Damage x1.35
+- Gold x1.75
 
 ### Boss scaling
 
-- Boss hits:
-  - Wave 10: `10`
-  - Wave 20: `12`
-  - Wave 30+: `14`
+- Boss hits by index:
+  - Boss 1 (wave 10): 10
+  - Boss 2 (wave 20): 12
+  - Boss 3 (wave 30): 14
 - Boss speed scale:
-  - `1.0 + min(0.04*(boss_index - 1), 0.40)`
+  - 1.0 + min(0.04*(boss_index-1), 0.40)
 - Boss damage scale:
-  - `1.0 + min(0.10*(boss_index - 1), 0.60)`
-- Boss phases:
-  - Phase 2 at `65%` HP: faster chase, first elite summon
-  - Phase 3 at `30%` HP: faster slam cadence, second elite summon
-- Boss stomp rules:
-  - Stomps only work during grounded chase windows
-  - Boss stomp bounce is intentionally much weaker than normal enemies
+  - 1.0 + min(0.14*(boss_index-1), 0.90)
+- Boss gold scale:
+  - 1.0 + 0.20*(boss_index-1)
+- Phase thresholds:
+  - Phase 2 at 65% HP
+  - Phase 3 at 30% HP
 
-## Performance/Tech Notes
+## Save and Persistence
 
-- Fireballs are pooled instead of spawned endlessly.
-- HUD is signal-driven for HP, gold, level, and boss state.
-- Save spam on enemy kills was removed.
-- Enemy tracking is wave-counter based instead of frame-polled scans.
-- Renderer is set to `Mobile` for lighter 2D performance.
+- Save path: user://savegame.bin
+- Autosave delay: 12 seconds after dirty state changes
+- Tracks HP, max HP, gold, level, wins, last victory wave, and tutorial progress.
 
-## Project Notes
+## Audio
 
-- Built with Godot 4
-- Solo-dev friendly architecture
-- Systems are still being tuned, especially wave pacing and boss feel
+Audio buses:
+- Master
+- Music
+- SFX
+
+### Music (3 soundtrack tracks)
+
+- main_menu: bijaybro-anime-inspiring-music-389687.ogg
+- world_loop: sekuora-epic-orchestra-anime-intro-242461.ogg
+- boss_soundtrack: nyxaurora-final-battle-ii-epic-cinematic-battle-music-with-intense-orchestral-361155.ogg
+
+### SFX Keys
+
+- slime_move
+- frog
+- enemy_explode
+- slash
+- slash_hit
+- roar
+- fireball
+- pickup_collectable
+- victory
+- growl
+- game_over
+
+## Audio and Licensing
+
+- Third-party audio licensing details are documented in res://audio/LICENSE.
+- Pixabay music and SFX source files are intended to remain untracked and can be restored locally when preparing builds.
 
 ## Credits
 
-- Sunny Land pixel assets by @ansimuz:
+- Sunny Land pixel assets by ansimuz:
   https://ansimuz.itch.io/sunny-land-pixel-game-art
 - freeCodeCamp tutorial inspiration:
   https://www.youtube.com/watch?v=S8lMTwSRoRg

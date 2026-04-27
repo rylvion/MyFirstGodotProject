@@ -74,6 +74,8 @@ func _ready() -> void:
 		Game.level_changed.connect(_on_level_changed)
 	if Game.tutorial_progress_changed.is_connected(_on_tutorial_progress_changed) == false:
 		Game.tutorial_progress_changed.connect(_on_tutorial_progress_changed)
+	if SettingsManager != null and SettingsManager.settings_changed.is_connected(_on_settings_changed) == false:
+		SettingsManager.settings_changed.connect(_on_settings_changed)
 	_sync_from_spawner()
 	_update_wave_labels()
 	_update_boss_header()
@@ -276,6 +278,10 @@ func _on_level_changed(_new_level: int) -> void:
 	_refresh_status_bars()
 
 func _on_tutorial_progress_changed() -> void:
+	_update_tutorial_label()
+
+
+func _on_settings_changed() -> void:
 	_update_tutorial_label()
 
 func _sync_from_spawner() -> void:

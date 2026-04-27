@@ -13,6 +13,9 @@ func _ready() -> void:
 	patrol_radius = 136.0
 	patrol_pause_time = 0.18
 	patrol_speed_multiplier = 0.78
+	movement_sfx_key = &"slime_move"
+	movement_sfx_cooldown = 0.62
+	movement_sfx_volume_db = -18.0
 	
 	super._ready()
 

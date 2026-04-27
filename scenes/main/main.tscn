@@ -1,44 +1,106 @@
-[gd_scene load_steps=3 format=3 uid="uid://bt6s71xfhwnxe"]
+[gd_scene load_steps=8 format=3 uid="uid://bt6s71xfhwnxe"]
 
 [ext_resource type="Script" uid="uid://cb2mhy2p3jui1" path="res://scripts/main.gd" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://drpff6640u0oa" path="res://scenes/backgrounds/BG.tscn" id="2_k2fmo"]
+[ext_resource type="Texture2D" uid="uid://bnmvlxpgkqqpu" path="res://ui/button/Button_Blue_3Slides.png" id="3_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://deoeghmip0rmy" path="res://ui/title/tiny-quest-title.png" id="4_6q06x"]
+[ext_resource type="Texture2D" uid="uid://dyffym86egv2p" path="res://ui/button/Button_Blue_3Slides_Pressed.png" id="5_hujxm"]
+[ext_resource type="Texture2D" uid="uid://c46nrca038x02" path="res://ui/button/Button_Hover_3Slides.png" id="6_yyfjg"]
+[ext_resource type="FontFile" uid="uid://ywy5pkddm8tv" path="res://ui/fonts/PirataOne-Regular.ttf" id="7_b1x3f"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_iuonh")
 
 [node name="BG" parent="." instance=ExtResource("2_k2fmo")]
-scroll_offset = Vector2(0, 4)
 
-[node name="Quit" type="Button" parent="."]
-z_index = 1
-offset_left = 743.0
-offset_top = 208.0
-offset_right = 947.0
-offset_bottom = 313.0
-tooltip_text = "This will quit the game"
+[node name="TinyQuestTitle" type="Sprite2D" parent="."]
+position = Vector2(549, 147)
+texture = ExtResource("4_6q06x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(192, 64)
+layout_mode = 0
+offset_left = 118.0
+offset_top = 439.0
+offset_right = 1002.0
+offset_bottom = 503.0
+theme_override_constants/separation = 500
+
+[node name="StartButton" type="TextureButton" parent="HBoxContainer"]
+z_index = 3
+layout_mode = 2
+texture_normal = ExtResource("3_l3cfh")
+texture_pressed = ExtResource("5_hujxm")
+texture_hover = ExtResource("6_yyfjg")
+
+[node name="Start" type="Label" parent="HBoxContainer/StartButton"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.69411767)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = ExtResource("7_b1x3f")
+theme_override_font_sizes/font_size = 32
+text = "Start "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="HBoxContainer"]
+z_index = 3
+layout_mode = 2
+texture_normal = ExtResource("3_l3cfh")
+texture_pressed = ExtResource("5_hujxm")
+texture_hover = ExtResource("6_yyfjg")
+
+[node name="Quit" type="Label" parent="HBoxContainer/QuitButton"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.69411767)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = ExtResource("7_b1x3f")
+theme_override_font_sizes/font_size = 32
 text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Play" type="Button" parent="."]
-z_index = 1
-offset_left = 121.0
-offset_top = 196.0
-offset_right = 314.0
-offset_bottom = 301.0
-tooltip_text = "This is a start button xd"
-text = "Play"
+[node name="SettingsButtons" type="TextureButton" parent="."]
+z_index = 3
+layout_mode = 0
+offset_left = 454.0
+offset_top = 528.0
+offset_right = 646.0
+offset_bottom = 592.0
+texture_normal = ExtResource("3_l3cfh")
+texture_pressed = ExtResource("5_hujxm")
+texture_hover = ExtResource("6_yyfjg")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 191.0
-offset_bottom = 64.0
-text = "❌ Reset Progress 🤡"
+[node name="Settings" type="Label" parent="SettingsButtons"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.69411767)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = ExtResource("7_b1x3f")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ResetDialog" type="ConfirmationDialog" parent="."]
-title = "[DEBUG] Reset Progress?"
-size = Vector2i(300, 100)
-
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_reset_button_pressed"]
-[connection signal="confirmed" from="ResetDialog" to="." method="_on_reset_dialogue_confirmed"]
+[connection signal="pressed" from="HBoxContainer/StartButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="SettingsButtons" to="." method="_on_settings_pressed"]

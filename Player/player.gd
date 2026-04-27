@@ -32,6 +32,7 @@ const CROUCH_COLLISION_OFFSET: Vector2 = Vector2(0.0, 7.0)
 const CROUCH_SPRITE_OFFSET: Vector2 = Vector2(0.0, 5.0)
 const DAMAGE_IFRAME_DURATION: float = 0.75
 const DAMAGE_FLICKER_INTERVAL: float = 0.08
+const AUTO_LEVEL_CHECK_INTERVAL: float = 0.45
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var body_collision: CollisionShape2D = $CollisionShape2D
@@ -50,6 +51,7 @@ var base_collision_scale: Vector2 = Vector2.ONE
 var base_sprite_position: Vector2 = Vector2.ZERO
 var damage_iframe_timer: float = 0.0
 var damage_flicker_timer: float = 0.0
+var auto_level_timer: float = 0.0
 static var _cached_fallback_frames: SpriteFrames = null
 
 var fireball_scene: PackedScene = preload("res://scenes/projectiles/fireball.tscn")
@@ -322,6 +324,7 @@ func _start_slash_swing() -> void:
 		return
 
 	slash_swing_in_progress = true
+	SoundManager.play_sfx(&"slash", -4.5)
 	var target_state: Dictionary = _get_saber_target()
 	var target_position: Vector2 = target_state["position"]
 	var aim_direction: Vector2 = (target_position - global_position).normalized()
@@ -356,6 +359,7 @@ func _physics_process(delta: float) -> void:
 		attack_timer -= delta
 	if slash_attack_timer > 0:
 		slash_attack_timer -= delta
+	auto_level_timer = maxf(auto_level_timer - delta, 0.0)
 	if stun_timer > 0.0:
 		stun_timer = maxf(stun_timer - delta, 0.0)
 	if damage_iframe_timer > 0.0:
@@ -436,6 +440,8 @@ func _physics_process(delta: float) -> void:
 
 	if not input_blocked and stun_timer <= 0.0 and Input.is_action_just_pressed("level_up"):
 		_try_level_up()
+	if not input_blocked and stun_timer <= 0.0:
+		_try_auto_level()
 	
 	if Game.playerHP <= 0:
 		handle_death()
@@ -443,11 +449,27 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
+func _try_auto_level() -> void:
+	if SettingsManager == null or not bool(SettingsManager.auto_level_enabled):
+		return
+	if auto_level_timer > 0.0:
+		return
+
+	auto_level_timer = AUTO_LEVEL_CHECK_INTERVAL
+	var leveled_up_any: bool = false
+	while Game.try_level_up():
+		leveled_up_any = true
+
+	if leveled_up_any:
+		Utils.saveGame()
+
 func handle_death() -> void:
 	if death:
 		return
 	
 	death = true
+	SoundManager.play_sfx(&"game_over", -2.5, 1.0, false)
 	if sprite != null:
 		sprite.visible = true
 		sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)

@@ -1,20 +1,35 @@
 extends Node
 
 const SAVE_PATH := "user://savegame.bin"
-const AUTOSAVE_DELAY_SECONDS := 12.0
+const DEFAULT_AUTOSAVE_DELAY_SECONDS := 12.0
 
 var _autosave_dirty: bool = false
 var _is_loading: bool = false
 var _autosave_timer: Timer
+var _autosave_delay_seconds: float = DEFAULT_AUTOSAVE_DELAY_SECONDS
 
 
 func _ready() -> void:
 	_autosave_timer = Timer.new()
 	_autosave_timer.one_shot = true
-	_autosave_timer.wait_time = AUTOSAVE_DELAY_SECONDS
+	_autosave_timer.wait_time = _autosave_delay_seconds
 	_autosave_timer.timeout.connect(_on_autosave_timeout)
 	add_child(_autosave_timer)
 	_connect_game_signals()
+
+
+func set_autosave_delay_seconds(delay_seconds: float) -> void:
+	_autosave_delay_seconds = clampf(delay_seconds, 5.0, 300.0)
+	if _autosave_timer == null:
+		return
+
+	_autosave_timer.wait_time = _autosave_delay_seconds
+	if _autosave_dirty and _autosave_timer.is_stopped():
+		_autosave_timer.start()
+
+
+func get_autosave_delay_seconds() -> float:
+	return _autosave_delay_seconds
 
 
 func saveGame() -> void:

@@ -27,3 +27,7 @@ addons/
 bin/
 .cache/
 builds/
+
+# Pixabay source audio (see res://audio/LICENSE)
+audio/music/**/*.ogg
+audio/SFX/**/*.ogg

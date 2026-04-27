@@ -1,5 +1,7 @@
 extends Node2D
 
+const SETTINGS_MENU_SCRIPT: GDScript = preload("res://scripts/ui/settings_menu.gd")
+
 @onready var spawner: EnemySpawner = $EnemySpawner
 @onready var quit_dialog: ConfirmationDialog = $UI/QuitDialog
 @onready var victory_dialog: AcceptDialog = $UI/VictoryDialog
@@ -8,6 +10,7 @@ extends Node2D
 @onready var command_feedback: Label = $UI/CommandFeedback
 
 var _victory_shown: bool = false
+var settings_menu: CanvasLayer
 
 
 func _ready() -> void:
@@ -27,6 +30,8 @@ func _ready() -> void:
 	command_bar.visible = false
 	command_feedback.visible = false
 	Game.input_blocked = false
+	SoundManager.play_music(&"world_loop", -7.0)
+	_setup_settings_menu()
 	if command_input.text_submitted.is_connected(_on_command_submitted) == false:
 		command_input.text_submitted.connect(_on_command_submitted)
 	call_deferred("_show_startup_time_feedback")
@@ -197,3 +202,13 @@ func _show_startup_time_feedback() -> void:
 	if startup_msec < 0:
 		return
 	print("Loaded in %d ms" % startup_msec)
+
+
+func _setup_settings_menu() -> void:
+	settings_menu = SETTINGS_MENU_SCRIPT.new() as CanvasLayer
+	if settings_menu == null:
+		return
+
+	settings_menu.set("show_gear_button", false)
+	settings_menu.set("block_game_input", true)
+	add_child(settings_menu)

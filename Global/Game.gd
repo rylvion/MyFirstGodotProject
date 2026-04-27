@@ -41,7 +41,7 @@ const TUTORIAL_STEP_HINTS: Dictionary = {
 	&"move": "Tutorial: Move with A/D or Left/Right.",
 	&"jump": "Tutorial: Press W, Up, or Space to jump.",
 	&"slash": "Tutorial: Left click to swing the saber.",
-	&"attack": "Tutorial: Press X, F, or Enter to throw a fireball.",
+	&"attack": "Tutorial: Press F to throw a fireball.",
 	&"pickup_gold": "Tutorial: Pick up cherries or gems to earn gold.",
 	&"stomp": "Tutorial: Jump on an enemy to bounce-kill it for gold.",
 	&"level_up": "Tutorial: Press R or use +1 Level when you can afford it.",
@@ -254,6 +254,9 @@ func is_tutorial_complete() -> bool:
 
 
 func get_next_tutorial_hint() -> String:
+	if SettingsManager != null and bool(SettingsManager.tutorial_disabled):
+		return ""
+
 	for step in TUTORIAL_STEP_ORDER:
 		if not bool(tutorial_progress.get(step, false)):
 			return str(TUTORIAL_STEP_HINTS.get(step, ""))

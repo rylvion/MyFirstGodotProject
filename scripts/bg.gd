@@ -15,6 +15,7 @@ extends Parallax2D
 @onready var houses_layer: Parallax2D = $Houses
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	var viewport_width := get_viewport_rect().size.x
 	_ensure_repeat(sky_layer, sky_repeat_hint, viewport_width)
 	_ensure_repeat(mountains_layer, mountains_repeat_hint, viewport_width)

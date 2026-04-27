@@ -23,16 +23,42 @@ extends Node
 # - main_menu: menu soundtrack
 # - world_loop: normal gameplay soundtrack
 # - boss_wave: boss soundtrack
-# - victory: win / ending soundtrack
+
+
+# 49053354-sword-slash-315218.ogg: 0.627 sec (627 ms)
+# dragon-studio-epic-dragon-roar-364481.ogg: 3.448 sec (3448 ms)
+# dragon-studio-frog-croaking-sound-effect-322956.ogg: 0.314 sec (314 ms)
+# dragon-studio-sword-clashhit-393837.ogg: 0.262 sec (262 ms)
+# driken5482-retro-explode-1-236678.ogg: 0.340 sec (340 ms)
+# floraphonic-fireball-whoosh-1-179125.ogg: 0.397 sec (397 ms)
+# floraphonic-slime-squish-5-218569.ogg: 0.576 sec (576 ms)
+# freesound_community-super-deep-growl-86749.ogg: 0.966 sec (966 ms)
+# lesiakower-8-bit-game-over-sound-effect-331435.ogg: 2.374 sec (2374 ms)
+# liecio-collect-points-190037.ogg: 0.313 sec (313 ms)
+# scratchonix-victory-chime-366449.ogg: 5.842 sec (5842 ms)
 
 const DEFAULT_SFX_PATHS: Dictionary = {
-	# example:
-	# "slime_move": "res://audio/sfx/slime/sludge_move.ogg",
+	"slime_move": "res://audio/SFX/floraphonic-slime-squish-5-218569.ogg", # use this when slime chasing (576 ms)
+	"frog": "res://audio/SFX/dragon-studio-frog-croaking-sound-effect-322956.ogg", # use this for chasing (314 ms)
+	"enemy_explode": "res://audio/SFX/driken5482-retro-explode-1-236678.ogg", # use this for enemy explosions/death (340 ms)
+	"slash": "res://audio/SFX/49053354-sword-slash-315218.ogg", # use this for player sword swings (627 ms)
+	"slash_hit": "res://audio/SFX/dragon-studio-sword-clashhit-393837.ogg", # use this for player sword connect hits (262 ms)
+	"roar": "res://audio/SFX/dragon-studio-epic-dragon-roar-364481.ogg", # use this when boss spawns, when boss does summoning and idk (3448 ms)
+	"fireball": "res://audio/SFX/floraphonic-fireball-whoosh-1-179125.ogg", # use this for fireball cast (397 ms)
+	"pickup_collectable": "res://audio/SFX/liecio-collect-points-190037.ogg", # use this for gem and cherry pickups (313 ms)
+	"victory": "res://audio/SFX/scratchonix-victory-chime-366449.ogg", # use this for victory fanfare after boss is defeated or after game completion (5842 ms)
+	"growl": "res://audio/SFX/freesound_community-super-deep-growl-86749.ogg", # use this for boss growl (966 ms)
+	"game_over": "res://audio/SFX/lesiakower-8-bit-game-over-sound-effect-331435.ogg" # use this for game over/when player dies (2374 ms)
 }
 
+# bijaybro-anime-inspiring-music-389687.ogg: 89.913 sec (89913 ms)
+# nyxaurora-final-battle-ii-epic-cinematic-battle-music-with-intense-orchestral-361155.ogg: 121.344 sec (121344 ms)
+# sekuora-epic-orchestra-anime-intro-242461.ogg: 118.704 sec (118704 ms)
+
 const DEFAULT_MUSIC_PATHS: Dictionary = {
-	# example:
-	# "main_menu": "res://music/main_menu.ogg",
+	"main_menu": "res://audio/music/bijaybro-anime-inspiring-music-389687.ogg", # Use this for main menu (looping, 89.913 sec (89913 ms))
+	"world_loop": "res://audio/music/sekuora-epic-orchestra-anime-intro-242461.ogg", # Use this for normal gameplay (looping, 118.704 sec (118704 ms)) 
+	"boss_soundtrack": "res://audio/music/nyxaurora-final-battle-ii-epic-cinematic-battle-music-with-intense-orchestral-361155.ogg" # Use this for boss fights (looping, 121.344 sec (121344 ms) fade out (10 sec) after boss is defeated, fade in 5 sec when boss spawns)
 }
 
 const SFX_POOL_SIZE: int = 12
@@ -54,13 +80,17 @@ var _current_music_key: StringName = &""
 
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	_setup_music_player()
 	_setup_sfx_pool()
 	_preload_all()
 
 
 # plays sfx and RETURNS the player so u can mess with it later if u want
-func play_sfx(sound_key: StringName, volume_db: float = 0.0, pitch_scale: float = 1.0, randomize := true) -> AudioStreamPlayer:
+func play_sfx(sound_key: StringName, volume_db: float = 0.0, pitch_scale: float = 1.0, use_randomization := true) -> AudioStreamPlayer:
+	if get_tree() != null and get_tree().paused:
+		return null
+
 	var stream: AudioStream = _get_stream_from_paths(sfx_paths, sound_key)
 	if stream == null:
 		push_warning("sfx missing: %s" % sound_key)
@@ -73,7 +103,7 @@ func play_sfx(sound_key: StringName, volume_db: float = 0.0, pitch_scale: float 
 	player.stream = stream
 
 	# random variation so it doesnt sound like copy paste every time
-	if randomize:
+	if use_randomization:
 		player.pitch_scale = randf_range(0.95, 1.05)
 		player.volume_db = volume_db + randf_range(-1.0, 1.0)
 	else:
@@ -94,7 +124,6 @@ func stop_sfx(player: AudioStreamPlayer) -> void:
 		return
 	player.stop()
 	_active_sfx.erase(player)
-
 
 func stop_all_sfx() -> void:
 	# brute force kill everything
@@ -178,6 +207,7 @@ func _setup_music_player() -> void:
 	_music_player = AudioStreamPlayer.new()
 	_music_player.name = "MusicPlayer"
 	_music_player.bus = &"Music"
+	_music_player.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(_music_player)
 
 
@@ -186,6 +216,7 @@ func _setup_sfx_pool() -> void:
 		var player := AudioStreamPlayer.new()
 		player.name = "SfxPlayer%d" % player_index
 		player.bus = &"SFX"
+		player.process_mode = Node.PROCESS_MODE_ALWAYS
 		add_child(player)
 		_sfx_players.append(player)
 

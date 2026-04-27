@@ -57,6 +57,7 @@ func activate(spawn_position: Vector2, new_direction: Vector2, team: StringName 
 		sprite.play("fly")
 		sprite.flip_h = direction.x < 0
 
+	SoundManager.play_sfx("fireball", 0.0, randf_range(0.95, 1.05))
 
 func deactivate() -> void:
 	is_active = false
